@@ -262,10 +262,38 @@ extension String {
         }
     }
     
+    //MARK: - Arranging
     /**
     Joins two or more strings, and returns a new joined string
     */
     func concat(string:String) -> String? {
         return self+string
     }
+    
+    /**
+    Reverses the string
+    */
+    func reverse() -> String {
+        var reversed = ""
+        for var i = self.length-1; i>=0 ;i-- {
+            var char : String = self[i]
+            reversed += char
+        }
+        return reversed
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
