@@ -51,6 +51,10 @@ Swift string with Javascript sugar.
 var word = "heart"
 var letter = word[0]
 println(letter) //h
+
+letter = word[-1]
+println(letter) //t
+
 ````    
 #### *myString["art"]*
 - Returns index of string    
