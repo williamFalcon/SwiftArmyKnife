@@ -2,6 +2,9 @@
 Swift string with Javascript sugar.
 - In swift without relying on NSString.    
 
+##To Use
+- Import JString.swift into your project.    
+- That's it!    
 ##Overview    
 ###Properties
 |  Property | Return | Description
