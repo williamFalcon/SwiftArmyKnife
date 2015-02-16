@@ -3,15 +3,41 @@ Swift string with Javascript sugar.
 - In swift without relying on NSString.    
 
 ##Overview    
-|  Method | Return | Description
+###Properties
+|  Property | Return | Description
+|----|----|----|
+|  **length** | Int | Length of string |    
+
+###Subscripting
+|  Subscript | Return | Description
 |----|----|----|
 |  **myString[1]** | String | Returns string at the index |
 |  **myString["art"]** | Int | Returns index of string |
 |  **myString[0...2]** | String | Returns string in the range  |
+
+###Methods
+|  Method | Return | Description
+|----|----|----|
 |  **matchesForRegex()**| [String] | Searches a string for a match against a regular expression, and returns the matches |
 |  **search()** | Int? | Searches a string for a specified value, or regular expression, and returns the position of the match |
 |  **contains()** | Bool | Returns true if string contains input string   |
 |  **charAt()** | Int? | Returns the character at the specified index (position) |
+|  **indexOf()** | Int? | Returns the position of the first found occurrence of a specified value in a string |
+|  **lastIndexOf()** | Int? | Returns the position of the last found occurrence of a specified value in a string |
+|  **substringFromIndex()** | String? | Extracts the characters from a string, after a specified index |
+|  **substringToIndex()** | String? | Extracts the characters from a string, before a specified index |
+|  **substringFromIndex()** | String | Extracts a part of a string and returns a new string |
+|  **substringFromIndex()** | String | Extracts a part of a string and returns a new string starting at an index and
+    going for the length requested |
+|  **slice()** | String | Extracts a part of a string and returns a new string |
+|  **splitOn()** | [String] | Splits a string into an array of substrings |
+|  **replaceAll()** | String | Searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced. Can take in an regular expression |
+|  **trim()** | String | Removes whitespace from both ends of a string |
+|  **trimLastChar()** | String | Removes the last char of the string |
+|  **trimFirstChar()** | String | Removes the first char of the string |
+|  **concat()** | String? | Joins two or more strings, and returns a new joined string |
+|  **reverse()** | String | Reverses the string |
+|  **toCharArray()** | [Character] | Separates string into an array of characters |
 
 
 ##Subscripting        
