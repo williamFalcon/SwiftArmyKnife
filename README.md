@@ -4,7 +4,8 @@ Swift string with Javascript sugar.
 
 ##To Use
 - Import JString.swift into your project.    
-- That's it!    
+- That's it!     
+
 ##Overview    
 ###Properties
 |  Property | Return | Description
