@@ -1,13 +1,11 @@
-//
-//  JString.swift
-//
-//  Created by William Falcon on 2/15/15.
-//  Copyright (c) 2015 HarlemAppCollective. All rights reserved.
-//
 /*
+JString.swift
+Created by William Falcon on 2/15/15.
+
 The MIT License (MIT)
 
 Copyright (c) 2015 William Falcon
+will@hacstudios.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -31,7 +29,7 @@ SOFTWARE.
 import Foundation
 
 /*
-JString for swift provides many of the convenience methods from javascript (and some from python).
+JString for swift provides many of the String API convenience methods from javascript (and some from python).
 */
 extension String {
     
@@ -173,7 +171,7 @@ extension String {
     /**
     Extracts the characters from a string, after a specified index
     */
-    func substringFromIndex (index:Int) -> String? {
+    func substringFromIndex(index:Int) -> String? {
         var substring : String?
         if index <= self.length && index >= 0 {
             substring = self.substringFromIndex(advance(self.startIndex, index))
@@ -201,6 +199,14 @@ extension String {
     }
     
     /**
+    Extracts a part of a string and returns a new string starting at an index and
+    going for the length requested
+    */
+    func substringFromIndex(index:Int, length:Int) -> String {
+        return self[index...(index+length)]
+    }
+    
+    /**
     Extracts a part of a string and returns a new string
     */
     func slice(start: Int, end: Int) -> String {
@@ -214,15 +220,6 @@ extension String {
         var results = self.componentsSeparatedByString(separator)
         return results
     }
-    
-    /**
-    Extracts a part of a string and returns a new string starting at an index and
-    going for the length requested
-    */
-    func substringFromIndex(index:Int, length:Int) -> String {
-        return self[index...(index+length)]
-    }
-    
     //MARK: - Formatting
     
     /**
