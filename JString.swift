@@ -50,7 +50,14 @@ extension String {
     Example: string[0] == "a"
     */
     subscript (index: Int) -> Character {
-        return self[advance(self.startIndex, index)]
+        //support negative indices
+        var i = index
+        if i < 0 {
+            i = self.length - abs(index)
+        }
+        
+        //return the requested item
+        return self[advance(self.startIndex, i)]
     }
     
     /**
@@ -63,7 +70,7 @@ extension String {
     
     /**
     Returns the index of the string
-    Example: string["ab"]
+    Example: string = "habel" string["ab"] (returns 1)
     */
     subscript (string: String) -> Int {
         return indexOf(string)!
@@ -244,7 +251,7 @@ extension String {
     Removes the last char of the string
     */
     func trimLastChar() -> String {
-        if self.length > 1 {
+        if self.length > 0 {
             return self[0..<self.length-1]
         }else {
             return self
@@ -280,6 +287,19 @@ extension String {
             reversed += char
         }
         return reversed
+    }
+    
+    /**
+    Separates string into an array of characters
+    */
+    func toCharArray() -> [Character] {
+        
+        var chars : [Character] = []
+        for c in self {
+            chars.append(c as Character)
+        }
+        
+        return chars
     }
 }
 
