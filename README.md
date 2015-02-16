@@ -1,6 +1,6 @@
 # JString
 Swift string with Javascript sugar.
-- Written in swift relying on NSString.    
+- In swift without relying on NSString.    
 
 ##Overview    
 |  Method | Return | Description
