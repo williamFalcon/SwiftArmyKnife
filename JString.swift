@@ -29,7 +29,7 @@ SOFTWARE.
 import Foundation
 
 /*
-JString for swift provides many of the String API convenience methods from javascript (and some from python). 
+JString for swift provides many of the String API convenience methods from javascript (and some from python).
 */
 extension String {
     
