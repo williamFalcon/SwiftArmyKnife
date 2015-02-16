@@ -27,8 +27,8 @@ Swift string with Javascript sugar.
 |  **substringFromIndex()** | String? | Extracts the characters from a string, after a specified index |
 |  **substringToIndex()** | String? | Extracts the characters from a string, before a specified index |
 |  **substringFromIndex()** | String | Extracts a part of a string and returns a new string |
-|  **substringFromIndex()** | String | Extracts a part of a string and returns a new string starting at an index and
-    going for the length requested |
+|  **substringFromIndex:toIndex** | String | Extracts a part of a string and returns a new string |
+|  **substringFromIndex:length** | String | Extracts a part of a string and returns a new string |
 |  **slice()** | String | Extracts a part of a string and returns a new string |
 |  **splitOn()** | [String] | Splits a string into an array of substrings |
 |  **replaceAll()** | String | Searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced. Can take in an regular expression |
@@ -111,13 +111,6 @@ println(result) //14
 var word = "he3arts in he2arth"
 var result = word.substringFromIndex(4)
 println(result) //"rts in he2arth"
-````    
-#### *substringToIndex(index:Int) -> String?*
-- Extracts the characters from a string, before a specified index
-````swift
-var word = "he3arts in he2arth"
-var result = word.substringToIndex(2)
-println(result) //"he"
 ````    
 #### *substringToIndex(index:Int) -> String?*
 - Extracts the characters from a string, before a specified index
