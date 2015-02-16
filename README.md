@@ -65,3 +65,116 @@ var word = "he3arts in he2arth"
 var result = word.charAt(0)
 println(result) //h
 ````    
+#### *indexOf(string: String?) -> Int?*
+- Returns the position of the first found occurrence of a specified value in a string
+````swift
+var word = "he3arts in he2arth"
+var result = word.indexOf("3a")
+println(result) //2
+````    
+#### *lastIndexOf(string: String?) -> Int?*
+- Returns the position of the last found occurrence of a specified value in a string
+````swift
+var word = "he3arts in he2arth"
+var result = word.lastIndexOf("ar")
+println(result) //14
+````    
+#### *substringFromIndex(index:Int) -> String?*
+- Extracts the characters from a string, after a specified index
+````swift
+var word = "he3arts in he2arth"
+var result = word.substringFromIndex(4)
+println(result) //"rts in he2arth"
+````    
+#### *substringToIndex(index:Int) -> String?*
+- Extracts the characters from a string, before a specified index
+````swift
+var word = "he3arts in he2arth"
+var result = word.substringToIndex(2)
+println(result) //"he"
+````    
+#### *substringToIndex(index:Int) -> String?*
+- Extracts the characters from a string, before a specified index
+````swift
+var word = "he3arts in he2arth"
+var result = word.substringToIndex(2)
+println(result) //"he"
+````    
+#### *substringFromIndex(index:Int, toIndex to:Int) -> String*
+- Extracts a part of a string and returns a new string
+````swift
+var word = "he3arts in he2arth"
+var result = word.substringFromIndex(2, toIndex: 5)
+println(result) //"3art"
+````    
+#### *substringFromIndex(index:Int, length:Int) -> String*
+- Extracts a part of a string and returns a new string starting at an index and
+    going for the length requested
+````swift
+var word = "he3arts in he2arth"
+var result = word.substringFromIndex(2, length: 4)
+println(result) //"3arts"
+````    
+#### *slice(start: Int, end: Int) -> String*
+- Extracts a part of a string and returns a new string
+````swift
+var word = "he3arts in he2arth"
+var result = word.slice(3, end: 6)
+println(result) //"arts"
+````    
+#### *splitOn(separator: String) -> [String]*
+- Splits a string into an array of substrings
+````swift
+var word = "he3arts in he2arth"
+var result = word.splitOn("a")
+println(result) //[he3, rts in he2, rth]
+````    
+#### *replaceAll(regex: String?, replacement:String?) -> String*
+- Searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced. Can take in an regular expression
+````swift
+var word = "he3arts in he2arth"
+var result = word.replaceAll("art", replacement: "##")
+println(result) //he3##s in he2##h
+````    
+#### *trim() -> String*
+- Removes whitespace from both ends of a string
+````swift
+var word = "he3arts in he2arth "
+var result = word.trim()
+println(result) //he3arts in he2arth
+````    
+#### *trimLastChar() -> String*
+- Removes the last char of the string
+````swift
+var word = "heart"
+var result = word.trimLastChar()
+println(result) //hear
+````    
+#### *trimFirstChar() -> String*
+- Removes the last char of the string
+````swift
+var word = "heart"
+var result = word.trimFirstChar()
+println(result) //eart
+````    
+#### *concat(string:String) -> String?*
+- Joins two or more strings, and returns a new joined string
+````swift
+var word = "food"
+var result = word.concat(" is good")
+println(result) //food is good
+````    
+#### *reverse() -> String*
+- Reverses the string
+````swift
+var word = "food"
+var result = word.reverse()
+println(result) //doof
+````    
+#### *toCharArray() -> [Character]*
+- Separates string into an array of characters
+````swift
+var word = "food"
+var result = word.toCharArray()
+println(result) //[f, o, o, d]
+````    
