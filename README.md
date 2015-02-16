@@ -15,7 +15,7 @@ Swift string with Javascript sugar.
 ###Subscripting
 |  Subscript | Return | Description
 |----|----|----|
-|  **myString[1]** | String | Returns string at the index |
+|  **myString[1]** | String | Returns string at the index (-1 gives the last char) |
 |  **myString["art"]** | Int | Returns index of string |
 |  **myString[0...2]** | String | Returns string in the range  |
 
@@ -46,7 +46,7 @@ Swift string with Javascript sugar.
 
 ##Subscripting        
 #### *myString[1]*
-- Returns string at the index    
+- Returns string at the index (-1 gives the last char)     
 ````swift
 var word = "heart"
 var letter = word[0]
