@@ -1,5 +1,5 @@
 /*
-JString.swift
+String.swift
 Created by William Falcon on 2/15/15.
 
 The MIT License (MIT)
@@ -29,14 +29,14 @@ SOFTWARE.
 import Foundation
 
 /*
-JString for swift provides many of the String API convenience methods from javascript (and some from python).
+String for swift provides many of the String API convenience methods from javascript (and some from python).
 */
 extension String {
     
     /**
     Returns length of the string
     */
-    var length: Int {
+    var _length: Int {
         get {
             return countElements(self)
         }
@@ -51,7 +51,7 @@ extension String {
         //support negative indices
         var i = index
         if i < 0 {
-            i = self.length - abs(index)
+            i = self._length - abs(index)
         }
         
         //return the requested item
@@ -71,7 +71,7 @@ extension String {
     Example: string = "habel" string["ab"] (returns 1)
     */
     subscript (string: String) -> Int {
-        return indexOf(string)!
+        return _indexOf(string)!
     }
     
     /**
@@ -86,11 +86,11 @@ extension String {
     /**
     Searches a string for a match against a regular expression, and returns the matches
     */
-    func matchesForRegex(regex: String) -> [String] {
+    func _matchesForRegex(regex: String) -> [String] {
         
         var results : [String] = []
         var regex = NSRegularExpression(pattern: regex, options: NSRegularExpressionOptions.CaseInsensitive, error: nil)
-        if let matches = regex?.matchesInString(self, options: nil, range: NSMakeRange(0, self.length)) {
+        if let matches = regex?.matchesInString(self, options: nil, range: NSMakeRange(0, self._length)) {
             for m in matches {
                 var match = self[m.range.location..<m.range.location+m.range.length]
                 results.append(match)
@@ -102,9 +102,9 @@ extension String {
     /**
     Searches a string for a specified value, or regular expression, and returns the position of the match
     */
-    func search(string:String?) -> Int? {
+    func _search(string:String?) -> Int? {
         var result : Int?
-        if let match = self.indexOf(string) {
+        if let match = self._indexOf(string) {
             result = match
         }
         return result
@@ -113,14 +113,14 @@ extension String {
     /**
     Returns true if string contains input string
     */
-    func contains(s: String) -> Bool{
+    func _contains(s: String) -> Bool{
         return (self.rangeOfString(s) != nil) ? true : false
     }
     
     /**
     Returns the character at the specified index (position)
     */
-    func charAt(index:Int?) -> String? {
+    func _charAt(index:Int?) -> String? {
         var result : String?
         if let i = index {
             result =  self[i]
@@ -132,7 +132,7 @@ extension String {
     /**
     Returns the position of the first found occurrence of a specified value in a string
     */
-    func indexOf(string: String?) -> Int? {
+    func _indexOf(string: String?) -> Int? {
         var result: Int?
         if let s = string {
             var range = self.rangeOfString(s)!
@@ -144,10 +144,10 @@ extension String {
     /**
     Returns the position of the last found occurrence of a specified value in a string
     */
-    func lastIndexOf(string: String?) -> Int? {
+    func _lastIndexOf(string: String?) -> Int? {
         var index : Int?
         if let s = string {
-            var startingIndex = self.length - s.length
+            var startingIndex = self._length - s._length
             
             //return nil if input string is larger than self
             if startingIndex < 0 {
@@ -157,8 +157,8 @@ extension String {
             //iterate from the end until we find a match in the string
             //when found, break
             for (var i = startingIndex; i>=0; i--){
-                var subString = self.substringFromIndex(i)!
-                if subString.contains(s) {
+                var subString = self._substringFromIndex(i)!
+                if subString._contains(s) {
                     index = i
                     break
                 }
@@ -171,9 +171,9 @@ extension String {
     /**
     Extracts the characters from a string, after a specified index
     */
-    func substringFromIndex(index:Int) -> String? {
+    func _substringFromIndex(index:Int) -> String? {
         var substring : String?
-        if index <= self.length && index >= 0 {
+        if index <= self._length && index >= 0 {
             substring = self.substringFromIndex(advance(self.startIndex, index))
         }
         return substring
@@ -182,10 +182,10 @@ extension String {
     /**
     Extracts the characters from a string, before a specified index
     */
-    func substringToIndex(index:Int) -> String? {
+    func _substringToIndex(index:Int) -> String? {
         
         var substring : String?
-        if index <= self.length && index >= 0 {
+        if index <= self._length && index >= 0 {
             substring = self.substringToIndex(advance(self.startIndex, index))
         }
         return substring
@@ -194,7 +194,7 @@ extension String {
     /**
     Extracts a part of a string and returns a new string
     */
-    func substringFromIndex(index:Int, toIndex to:Int) -> String {
+    func _substringFromIndex(index:Int, toIndex to:Int) -> String {
         return self[index...to]
     }
     
@@ -202,21 +202,21 @@ extension String {
     Extracts a part of a string and returns a new string starting at an index and
     going for the length requested
     */
-    func substringFromIndex(index:Int, length:Int) -> String {
+    func _substringFromIndex(index:Int, length:Int) -> String {
         return self[index...(index+length)]
     }
     
     /**
     Extracts a part of a string and returns a new string
     */
-    func slice(start: Int, end: Int) -> String {
+    func _slice(start: Int, end: Int) -> String {
         return self[start...end]
     }
     
     /**
     Splits a string into an array of substrings
     */
-    func splitOn(separator: String) -> [String] {
+    func _splitOn(separator: String) -> [String] {
         var results = self.componentsSeparatedByString(separator)
         return results
     }
@@ -225,7 +225,7 @@ extension String {
     /**
     Searches a string for a specified value, or a regular expression, and returns a new string where the specified values are replaced. Can take in an regular expression
     */
-    func replaceAll(regex: String?, replacement:String?) -> String {
+    func _replaceAll(regex: String?, replacement:String?) -> String {
         
         var result : String = self
         if let r = regex {
@@ -240,16 +240,16 @@ extension String {
     /**
     Removes whitespace from both ends of a string
     */
-    func trim() -> String {
+    func _trim() -> String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
     }
     
     /**
     Removes the last char of the string
     */
-    func trimLastChar() -> String {
-        if self.length > 0 {
-            return self[0..<self.length-1]
+    func _trimLastChar() -> String {
+        if self._length > 0 {
+            return self[0..<self._length-1]
         }else {
             return self
         }
@@ -258,9 +258,9 @@ extension String {
     /**
     Removes the first char of the string
     */
-    func trimFirstChar() -> String {
-        if self.length > 0 {
-            return self[1..<self.length]
+    func _trimFirstChar() -> String {
+        if self._length > 0 {
+            return self[1..<self._length]
         }else {
             return self
         }
@@ -270,16 +270,16 @@ extension String {
     /**
     Joins two or more strings, and returns a new joined string
     */
-    func concat(string:String) -> String? {
+    func _concat(string:String) -> String? {
         return self+string
     }
     
     /**
     Reverses the string
     */
-    func reverse() -> String {
+    func _reverse() -> String {
         var reversed = ""
-        for var i = self.length-1; i>=0 ;i-- {
+        for var i = self._length-1; i>=0 ;i-- {
             var char : String = self[i]
             reversed += char
         }
@@ -289,7 +289,7 @@ extension String {
     /**
     Separates string into an array of characters
     */
-    func toCharArray() -> [Character] {
+    func _toCharArray() -> [Character] {
         
         var chars : [Character] = []
         for c in self {
