@@ -2,23 +2,23 @@
 Library for the missing bolts in Swift.    
 Help shape Bolt_Swift, become a contributor!    
 
-#To Use
-Include the BoltLibrary folder in your app.    
+##To Use
+Include the [BoltLibrary] (https://github.com/williamFalcon/Bolt_Swift/tree/master/Bolt/BoltLibrary) folder in your app.    
 Cocoapods (coming soon).   
 
-#Current Bolts    
-- String    
+##Current Bolts    
+- [String](https://github.com/williamFalcon/Bolt_Swift/tree/master/Bolt/BoltLibrary/String)    
 
-#Upcoming Bolts    
+##Upcoming Bolts    
 - Array    
 - Dictionary    
 - NSNumber    
 - Int    
 
-#Bolts in Development
+##Bolts in Development
 - None :( (Become a contributor)
 
-#Contributors wanted!
+##Contributors wanted!
 Pick any of the upcoming bolts to implement.
 
 *To contribute to Bolt_Swift:*    
@@ -29,5 +29,5 @@ Pick any of the upcoming bolts to implement.
 5. Add documentation    
 6. Submit a pull request    
 
-#Contact me    
+###Contact me    
 Email me at will@hacstudios.com for questions    
