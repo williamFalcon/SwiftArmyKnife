@@ -12,9 +12,10 @@
 		EEC1BE391A952D5B00A22055 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EEC1BE371A952D5B00A22055 /* Main.storyboard */; };
 		EEC1BE3B1A952D5B00A22055 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC1BE3A1A952D5B00A22055 /* Images.xcassets */; };
 		EEC1BE3E1A952D5B00A22055 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEC1BE3C1A952D5B00A22055 /* LaunchScreen.xib */; };
-		EEC1BE561A952DC600A22055 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1BE551A952DC600A22055 /* String.swift */; };
-		EEC1BE571A952DC600A22055 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1BE551A952DC600A22055 /* String.swift */; };
 		EEC1BE5C1A952F0B00A22055 /* StringTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC1BE5B1A952F0B00A22055 /* StringTest.swift */; };
+		EECD1B161AAA32D500B9C291 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EECD1B141AAA32D500B9C291 /* README.md */; };
+		EECD1B171AAA32D500B9C291 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD1B151AAA32D500B9C291 /* String.swift */; };
+		EECD1B181AAA330800B9C291 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD1B151AAA32D500B9C291 /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +38,9 @@
 		EEC1BE3D1A952D5B00A22055 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		EEC1BE431A952D5B00A22055 /* BoltTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BoltTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC1BE481A952D5B00A22055 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EEC1BE551A952DC600A22055 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extensions/String.swift; sourceTree = "<group>"; };
 		EEC1BE5B1A952F0B00A22055 /* StringTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
+		EECD1B141AAA32D500B9C291 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		EECD1B151AAA32D500B9C291 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,7 @@
 		EEC1BE301A952D5B00A22055 /* Bolt */ = {
 			isa = PBXGroup;
 			children = (
-				EEC1BE541A952DB800A22055 /* Extensions */,
+				EECD1B121AAA32D500B9C291 /* BoltLibrary */,
 				EEC1BE531A952D6700A22055 /* StandardAppFiles */,
 				EEC1BE311A952D5B00A22055 /* Supporting Files */,
 			);
@@ -124,12 +126,21 @@
 			name = StandardAppFiles;
 			sourceTree = "<group>";
 		};
-		EEC1BE541A952DB800A22055 /* Extensions */ = {
+		EECD1B121AAA32D500B9C291 /* BoltLibrary */ = {
 			isa = PBXGroup;
 			children = (
-				EEC1BE551A952DC600A22055 /* String.swift */,
+				EECD1B131AAA32D500B9C291 /* String */,
 			);
-			name = Extensions;
+			path = BoltLibrary;
+			sourceTree = "<group>";
+		};
+		EECD1B131AAA32D500B9C291 /* String */ = {
+			isa = PBXGroup;
+			children = (
+				EECD1B141AAA32D500B9C291 /* README.md */,
+				EECD1B151AAA32D500B9C291 /* String.swift */,
+			);
+			path = String;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,8 +243,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EEC1BE561A952DC600A22055 /* String.swift in Sources */,
+				EECD1B161AAA32D500B9C291 /* README.md in Sources */,
 				EEC1BE361A952D5B00A22055 /* ViewController.swift in Sources */,
+				EECD1B171AAA32D500B9C291 /* String.swift in Sources */,
 				EEC1BE341A952D5B00A22055 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,8 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EECD1B181AAA330800B9C291 /* String.swift in Sources */,
 				EEC1BE5C1A952F0B00A22055 /* StringTest.swift in Sources */,
-				EEC1BE571A952DC600A22055 /* String.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
