@@ -2,6 +2,10 @@
 Library for the missing bolts in Swift.    
 Help shape Bolt_Swift, become a contributor!    
 
+#To Use
+Include the BoltLibrary folder in your app.    
+Cocoapods (coming soon).   
+
 #Current Bolts    
 - String    
 
