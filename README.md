@@ -12,7 +12,6 @@ Cocoapods (coming soon).
 //String Examples
 
 var word = "heart"
-var letter = word[0]
 println(word[0]) //h
 println(word[-1]) //t
 
