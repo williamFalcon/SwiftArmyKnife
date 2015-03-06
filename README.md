@@ -24,7 +24,7 @@ println(word.reverse()) //treah
 var word = "he3arts in he2arth"
 var matches = word.matchesForRegex("he[0-9]{1}")
 println(matches) //[he3, he2]
-...
+//much more...
 ````
 
 ##Upcoming Bolts    
