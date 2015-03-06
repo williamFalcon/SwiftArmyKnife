@@ -7,7 +7,7 @@ Include the [BoltLibrary] (https://github.com/williamFalcon/Bolt_Swift/tree/mast
 Cocoapods (coming soon).   
 
 ##Current Bolts    
-#### [String](https://github.com/williamFalcon/Bolt_Swift/tree/master/Bolt/BoltLibrary/String)    
+#### [**String**](https://github.com/williamFalcon/Bolt_Swift/tree/master/Bolt/BoltLibrary/String)    
 ````swift
 //String Examples
 
