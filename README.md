@@ -8,6 +8,24 @@ Cocoapods (coming soon).
 
 ##Current Bolts    
 - [String](https://github.com/williamFalcon/Bolt_Swift/tree/master/Bolt/BoltLibrary/String)    
+Example:
+````swift
+var word = "heart"
+var letter = word[0]
+println(word[0]) //h
+println(word[-1]) //t
+
+var index = word["art"]
+println(index) //2
+
+println(word.length) //5
+println(word.reverse()) //treah
+
+var word = "he3arts in he2arth"
+var matches = word.matchesForRegex("he[0-9]{1}")
+println(matches) //[he3, he2]
+...
+````
 
 ##Upcoming Bolts    
 - Array    
