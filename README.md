@@ -8,8 +8,9 @@ Cocoapods (coming soon).
 
 ##Current Bolts    
 - [String](https://github.com/williamFalcon/Bolt_Swift/tree/master/Bolt/BoltLibrary/String)    
-Example:
 ````swift
+//String Examples
+
 var word = "heart"
 var letter = word[0]
 println(word[0]) //h
