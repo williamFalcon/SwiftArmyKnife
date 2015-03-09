@@ -16,6 +16,7 @@
 		EECD1B161AAA32D500B9C291 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = EECD1B141AAA32D500B9C291 /* README.md */; };
 		EECD1B171AAA32D500B9C291 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD1B151AAA32D500B9C291 /* String.swift */; };
 		EECD1B181AAA330800B9C291 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = EECD1B151AAA32D500B9C291 /* String.swift */; };
+		EEDD34B01AADDBD700840E52 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDD34AF1AADDBD700840E52 /* Array.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		EEC1BE5B1A952F0B00A22055 /* StringTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTest.swift; sourceTree = "<group>"; };
 		EECD1B141AAA32D500B9C291 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		EECD1B151AAA32D500B9C291 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		EEDD34AF1AADDBD700840E52 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +131,7 @@
 		EECD1B121AAA32D500B9C291 /* BoltLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				EEDD34AE1AADDBAD00840E52 /* Array */,
 				EECD1B131AAA32D500B9C291 /* String */,
 			);
 			path = BoltLibrary;
@@ -141,6 +144,14 @@
 				EECD1B151AAA32D500B9C291 /* String.swift */,
 			);
 			path = String;
+			sourceTree = "<group>";
+		};
+		EEDD34AE1AADDBAD00840E52 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				EEDD34AF1AADDBD700840E52 /* Array.swift */,
+			);
+			path = Array;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EECD1B161AAA32D500B9C291 /* README.md in Sources */,
+				EEDD34B01AADDBD700840E52 /* Array.swift in Sources */,
 				EEC1BE361A952D5B00A22055 /* ViewController.swift in Sources */,
 				EECD1B171AAA32D500B9C291 /* String.swift in Sources */,
 				EEC1BE341A952D5B00A22055 /* AppDelegate.swift in Sources */,

@@ -12,14 +12,30 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var obj = Beer();
+        obj.name = "will"
+        obj.life = "sugar"
+        
+        var obj2 = ["will":"sugar"];
+        
+        var arr = [obj, obj2]
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+
+        
         // Dispose of any resources that can be recreated.
     }
 
 
+}
+
+class Beer : NSObject {
+    
+    var name : String!
+    var life : String!
 }
 
