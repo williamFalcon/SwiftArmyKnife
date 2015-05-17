@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Tablet Inc. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIViewController {
     

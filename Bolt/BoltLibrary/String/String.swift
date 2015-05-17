@@ -26,7 +26,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import Foundation
+import UIKit
 
 /*
 String for swift provides many of the String API convenience methods from javascript (and some from python).
