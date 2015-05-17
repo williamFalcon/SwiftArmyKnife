@@ -1,6 +1,11 @@
+/*
+NSMutableAttributedString.swift
+Created by William Falcon on 5/14/15.
+
 The MIT License (MIT)
 
 Copyright (c) 2015 William Falcon
+will@hacstudios.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,4 +24,37 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
 
+import Foundation
+
+extension NSMutableAttributedString {
+    
+    ///Returns range of whole string (0->length)
+    func _fullRange() -> NSRange {
+        return NSRange(location: 0, length: self.length)
+    }
+    
+    ///Sets text color
+    func _setTextColor(color:UIColor) {
+        self.addAttribute(NSForegroundColorAttributeName, value: color, range: _fullRange())
+    }
+    
+    ///Sets text font
+    func _setTextFont(font:UIFont) {
+        self.addAttribute(NSFontAttributeName, value: font, range: _fullRange())
+    }
+    
+    ///Sets strike through
+    func _setStrikeThrough() {
+        self.addAttribute(NSStrikethroughStyleAttributeName, value: 1, range: _fullRange())
+    }
+}
+
+///Enables string concatenation
+public func + (left:NSMutableAttributedString, right:NSMutableAttributedString) -> NSMutableAttributedString {
+    
+    var combined = left
+    combined.appendAttributedString(right)
+    return combined
+}

@@ -1,6 +1,11 @@
+/*
+GCD.swift
+Created by William Falcon on 2/15/15.
+
 The MIT License (MIT)
 
 Copyright (c) 2015 William Falcon
+will@hacstudios.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,4 +24,34 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
 
+import UIKit
+
+class GCD: NSObject {
+    
+    ///Executes code with delay
+    class func _delay(delay:Double, closure:()->()) {
+        dispatch_after(
+            dispatch_time(
+                DISPATCH_TIME_NOW,
+                Int64(delay * Double(NSEC_PER_SEC))
+            ),
+            dispatch_get_main_queue(), closure)
+    }
+    
+    ///Places on main q
+    class func _dispatchMainQueue(closure:()->()) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            closure()
+        })
+    }
+
+    ///Dispatches code once
+    class func _dispatchOnce(closure:()->()) {
+        var token: dispatch_once_t = 0
+        dispatch_once(&token) {
+            closure()
+        }
+    }
+}

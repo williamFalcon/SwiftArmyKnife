@@ -1,6 +1,11 @@
+/*
+UITableViewCell.swift
+Created by Peng Chia on 4/3/15.
+
 The MIT License (MIT)
 
 Copyright (c) 2015 William Falcon
+will@hacstudios.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,4 +24,31 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
+//
 
+import Foundation
+import UIKit
+
+extension UITableViewCell {
+    
+    //MARK: - Computed Properties
+    /// Returns the class name of this cell as the identifier.
+    var _cellIdentifier : String {
+        var identifier =  NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last!
+        return identifier
+    }
+    
+    /// Returns the class name of this cell as the identifier.
+    class func _identifier() -> String {
+        return _className()
+    }
+    
+    //MARK: - Methods
+    /// Registers this cell to the passed in tableView
+    class func _registerToTableView(tableView: UITableView) {
+        var name = _identifier()
+        let nib = UINib(nibName: name, bundle: NSBundle.mainBundle())
+        tableView.registerNib(nib, forCellReuseIdentifier: name)
+    }
+}

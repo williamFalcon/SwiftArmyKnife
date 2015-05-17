@@ -42,13 +42,58 @@ extension Array {
     :param: object Object to find the index of
     :returns: Object object found or nil
     */
-    func _indexOf<T: Equatable>(array: [T], valueToFind: T) -> Int? {
-        for (index, value) in enumerate(array) {
-            if value == valueToFind {
-                return index
+    
+    func _indexOf <T: Equatable> (item: T) -> Int? {
+        if item is Element {
+            return Swift.find(unsafeBitCast(self, [T].self), item)
+        }
+        
+        return nil
+    }
+    
+    /// helps prevent out of bounds access
+    func _indexInBounds(index:Int) -> Bool {
+        var inBounds = (self.count-1) >= index
+        return inBounds
+    }
+    
+    // Contains an element
+    func _contains <T: Equatable> (items: T...) -> Bool {
+        return items._allTrue { self._indexOf($0) >= 0 }
+    }
+    
+    func _countAsFloat() -> CGFloat {
+        return CGFloat(self.count)
+    }
+    
+    func _removeFirst() -> Array {
+        var copy = self
+        if !copy.isEmpty {
+            copy.removeAtIndex(0)
+        }
+        return copy
+    }
+    
+    /// Joins an array of strings
+    func _joinWithSeparator(separator:String) -> String {
+        
+        var joined = String()
+        for obj in self {
+            var string = obj as! String
+            joined = joined + string + separator
+        }
+        
+        return joined
+    }
+    
+    // if all found
+    private func _allTrue (ele: (Element) -> Bool) -> Bool {
+        for item in self {
+            if !ele(item) {
+                return false
             }
         }
-        return nil
+        return true
     }
 }
 
@@ -96,7 +141,7 @@ Removes an element from an array
 */
 public func - <T:Equatable>(inout array: [T], elem: T) -> [T] {
     
-    if let index = array._indexOf(array, valueToFind: elem) {
+    if let index = array._indexOf(elem) {
         array.removeAtIndex(index)
     }
     return array

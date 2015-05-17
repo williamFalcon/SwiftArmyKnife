@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         var obj2 = ["will":"sugar"];
         
         var arr = [obj, obj2]
-        // Do any additional setup after loading the view, typically from a nib.
+        print(arr._contains(obj))        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {

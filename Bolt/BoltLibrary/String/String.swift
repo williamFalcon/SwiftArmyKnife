@@ -38,7 +38,7 @@ extension String {
     */
     var _length: Int {
         get {
-            return countElements(self)
+            return count(self)
         }
     }
     
@@ -167,6 +167,15 @@ extension String {
         return index
     }
     
+
+    func _rangeOfString(sub:String) -> NSRange? {
+        
+        if let start = self._indexOf(sub) {
+            return NSMakeRange(start, sub._length)
+        }
+        return nil
+    }
+    
     //MARK: - Substrings
     /**
     Extracts the characters from a string, after a specified index
@@ -189,6 +198,13 @@ extension String {
             substring = self.substringToIndex(advance(self.startIndex, index))
         }
         return substring
+    }
+    
+    /// Extracts the characters from a string
+    func _removeString(str:String) -> String? {
+        
+        var substr = self._replaceAll(str, replacement: "")
+        return substr
     }
     
     /**
@@ -298,9 +314,44 @@ extension String {
         
         return chars
     }
+    
+    /// Localized string
+    static func _localizedString(key:String) -> String {
+        var localized = NSLocalizedString(key, comment: "")
+        
+        return localized
+    }
+    
+    //MARK: - Sizing
+    /// returns size of string with a font
+    func _sizeWithFont(font:UIFont) -> CGSize {
+        var label = UILabel()
+        label.text = self
+        label.font = font
+        label.sizeToFit()
+        
+        return label.frame.size
+    }
+    
+    //MARK: - Sizing
+    /// returns size of string with a font
+    func _sizeWithFont(font:UIFont, maxWidth width:CGFloat) -> CGSize {
+        
+        var label = UILabel(frame: CGRectMake(0, 0, width, 0))
+        label.numberOfLines = 0
+        label.text = self
+        label.font = font
+        
+        var maxSize = CGSizeMake(width, CGFloat.max)
+        var requiredSize = label.sizeThatFits(maxSize)
+        
+        return requiredSize
+    }
 }
 
-
+public func - (string:String, subString:String) -> String {
+    return string._removeString(subString)!
+}
 
 
 

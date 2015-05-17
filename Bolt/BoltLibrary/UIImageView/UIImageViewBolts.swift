@@ -1,6 +1,11 @@
+/*
+UICollectionReusableView.swift
+Created by William Falcon on 3/26/15.
+
 The MIT License (MIT)
 
 Copyright (c) 2015 William Falcon
+will@hacstudios.com
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,4 +24,35 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+*/
 
+import UIKit
+
+extension UIImageView {
+    
+    ///Init with an image name
+    convenience init(_imageName:String) {
+        self.init()
+
+        var image = UIImage(named: _imageName)
+        self.image = image
+        
+        if let im = image {
+            self.frame = CGRect(origin: CGPointZero, size: im.size)
+        }
+    }
+
+    /// Tints imageView
+    func _tintWithColor(color:UIColor) {
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            var coloredImage = self.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            self.image = coloredImage
+            self.tintColor = color
+        })
+    }
+    
+    ///Flips an image horizontally
+    func _mirrorHorizontally() {
+        self.transform = CGAffineTransformScale(transform, -1, 1)
+    }
+}
