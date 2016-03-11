@@ -38,7 +38,7 @@ extension String {
     */
     var _length: Int {
         get {
-            return count(self)
+            return self.characters.count
         }
     }
     
@@ -55,7 +55,7 @@ extension String {
         }
         
         //return the requested item
-        return self[advance(self.startIndex, i)]
+        return self[self.startIndex.advancedBy(i)]
     }
     
     /**
@@ -79,7 +79,7 @@ extension String {
     Example: string[0...2] == "abc"
     */
     subscript (range: Range<Int>) -> String {
-        return substringWithRange(Range(start: advance(startIndex, range.startIndex), end: advance(startIndex, range.endIndex)))
+        return substringWithRange(Range(start: startIndex.advancedBy(range.startIndex), end: startIndex.advancedBy(range.endIndex)))
     }
     
     //MARK: - Searching
@@ -89,10 +89,10 @@ extension String {
     func _matchesForRegex(regex: String) -> [String] {
         
         var results : [String] = []
-        var regex = NSRegularExpression(pattern: regex, options: NSRegularExpressionOptions.CaseInsensitive, error: nil)
-        if let matches = regex?.matchesInString(self, options: nil, range: NSMakeRange(0, self._length)) {
+        let regex = try? NSRegularExpression(pattern: regex, options: NSRegularExpressionOptions.CaseInsensitive)
+        if let matches = regex?.matchesInString(self, options: [], range: NSMakeRange(0, self._length)) {
             for m in matches {
-                var match = self[m.range.location..<m.range.location+m.range.length]
+                let match = self[m.range.location..<m.range.location+m.range.length]
                 results.append(match)
             }
         }
@@ -108,6 +108,13 @@ extension String {
             result = match
         }
         return result
+    }
+    
+    /**
+    Searches a string for a specified value, or regular expression, and returns the position of the match
+    */
+    func _containsRegex(string:String?) -> Bool {
+        return _matchesForRegex(string!).count > 0
     }
     
     /**
@@ -135,8 +142,8 @@ extension String {
     func _indexOf(string: String?) -> Int? {
         var result: Int?
         if let s = string {
-            var range = self.rangeOfString(s)!
-            result = distance(self.startIndex, range.startIndex)
+            let range = self.rangeOfString(s)!
+            result = self.startIndex.distanceTo(range.startIndex)
         }
         return result
     }
@@ -147,7 +154,7 @@ extension String {
     func _lastIndexOf(string: String?) -> Int? {
         var index : Int?
         if let s = string {
-            var startingIndex = self._length - s._length
+            let startingIndex = self._length - s._length
             
             //return nil if input string is larger than self
             if startingIndex < 0 {
@@ -157,7 +164,7 @@ extension String {
             //iterate from the end until we find a match in the string
             //when found, break
             for (var i = startingIndex; i>=0; i--){
-                var subString = self._substringFromIndex(i)!
+                let subString = self._substringFromIndex(i)!
                 if subString._contains(s) {
                     index = i
                     break
@@ -167,7 +174,7 @@ extension String {
         return index
     }
     
-
+    
     func _rangeOfString(sub:String) -> NSRange? {
         
         if let start = self._indexOf(sub) {
@@ -183,7 +190,7 @@ extension String {
     func _substringFromIndex(index:Int) -> String? {
         var substring : String?
         if index <= self._length && index >= 0 {
-            substring = self.substringFromIndex(advance(self.startIndex, index))
+            substring = self.substringFromIndex(self.startIndex.advancedBy(index))
         }
         return substring
     }
@@ -195,7 +202,7 @@ extension String {
         
         var substring : String?
         if index <= self._length && index >= 0 {
-            substring = self.substringToIndex(advance(self.startIndex, index))
+            substring = self.substringToIndex(self.startIndex.advancedBy(index))
         }
         return substring
     }
@@ -203,7 +210,7 @@ extension String {
     /// Extracts the characters from a string
     func _removeString(str:String) -> String? {
         
-        var substr = self._replaceAll(str, replacement: "")
+        let substr = self._replaceAll(str, replacement: "")
         return substr
     }
     
@@ -233,7 +240,7 @@ extension String {
     Splits a string into an array of substrings
     */
     func _splitOn(separator: String) -> [String] {
-        var results = self.componentsSeparatedByString(separator)
+        let results = self.componentsSeparatedByString(separator)
         return results
     }
     //MARK: - Formatting
@@ -296,7 +303,7 @@ extension String {
     func _reverse() -> String {
         var reversed = ""
         for var i = self._length-1; i>=0 ;i-- {
-            var char : String = self[i]
+            let char : String = self[i]
             reversed += char
         }
         return reversed
@@ -308,7 +315,7 @@ extension String {
     func _toCharArray() -> [Character] {
         
         var chars : [Character] = []
-        for c in self {
+        for c in self.characters {
             chars.append(c as Character)
         }
         
@@ -317,7 +324,7 @@ extension String {
     
     /// Localized string
     static func _localizedString(key:String) -> String {
-        var localized = NSLocalizedString(key, comment: "")
+        let localized = NSLocalizedString(key, comment: "")
         
         return localized
     }
@@ -325,7 +332,7 @@ extension String {
     //MARK: - Sizing
     /// returns size of string with a font
     func _sizeWithFont(font:UIFont) -> CGSize {
-        var label = UILabel()
+        let label = UILabel()
         label.text = self
         label.font = font
         label.sizeToFit()
@@ -337,15 +344,40 @@ extension String {
     /// returns size of string with a font
     func _sizeWithFont(font:UIFont, maxWidth width:CGFloat) -> CGSize {
         
-        var label = UILabel(frame: CGRectMake(0, 0, width, 0))
+        let label = UILabel(frame: CGRectMake(0, 0, width, 0))
         label.numberOfLines = 0
         label.text = self
         label.font = font
         
-        var maxSize = CGSizeMake(width, CGFloat.max)
-        var requiredSize = label.sizeThatFits(maxSize)
+        let maxSize = CGSizeMake(width, CGFloat.max)
+        let requiredSize = label.sizeThatFits(maxSize)
         
         return requiredSize
+    }
+    
+    /*
+    Returns true if string is a valid email address.
+    Uses regex: [A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}
+    
+    :param: allowEmptyEmail - If true will allow emails of length 0
+    */
+    func _isValidEmail(allowEmptyEmail allowEmptyEmail:Bool) -> Bool {
+        
+        let e = self._trim()
+        
+        //allow empty email
+        if allowEmptyEmail && e._length == 0 {
+            return true
+        }
+        
+        let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
+        let matches = e._matchesForRegex(regex)
+        return matches.count > 0
+    }
+    
+    ///Returns true if length == 0
+    func _isEmpty() -> Bool {
+        return self._length == 0
     }
 }
 

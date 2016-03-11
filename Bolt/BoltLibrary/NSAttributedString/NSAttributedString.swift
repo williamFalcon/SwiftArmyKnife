@@ -35,7 +35,7 @@ extension NSAttributedString {
 ///Concatenates two attributed strings
 public func + (left:NSAttributedString, right:NSAttributedString) -> NSAttributedString {
     
-    var combined = NSMutableAttributedString(attributedString: left)
+    let combined = NSMutableAttributedString(attributedString: left)
     combined.appendAttributedString(right)
     return combined
 }

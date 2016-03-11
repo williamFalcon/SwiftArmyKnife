@@ -32,7 +32,7 @@ extension UICollectionReusableView {
     
     //MARK: - Computed Properties
     var _cellIdentifier : String {
-        var identifier =  NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last!
+        let identifier =  NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last!
         return identifier
     }
     
@@ -43,7 +43,7 @@ extension UICollectionReusableView {
     //MARK: - Methods
     /// Registers this cell to the passed in collectionView
     class func _registerHeaderToCollectionView(cv: UICollectionView) {
-        var name = _className()
+        let name = _className()
         let nib = UINib(nibName: name, bundle: NSBundle.mainBundle())
         cv.registerNib(nib, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: name)
     }

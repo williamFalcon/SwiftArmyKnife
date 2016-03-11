@@ -35,8 +35,8 @@ extension NSNumber {
     
     ///Returns the number with the default currency of the device
     ///ex: $3.00
-    func _currencyString(#maxFractionDigits: NSInteger) -> String? {
-        var formatter = NSNumberFormatter()
+    func _currencyString(maxFractionDigits maxFractionDigits: NSInteger) -> String? {
+        let formatter = NSNumberFormatter()
         formatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         formatter.maximumFractionDigits = maxFractionDigits
         return formatter.stringFromNumber(self)
@@ -45,37 +45,37 @@ extension NSNumber {
 
 ///Subtract two numbers
 public func - (first: NSNumber, second:NSNumber) -> NSNumber {
-    var value = first.doubleValue - second.doubleValue
+    let value = first.doubleValue - second.doubleValue
     return NSNumber(double: value)
 }
 
 ///Add two numbers
 public func + (first: NSNumber, second:NSNumber) -> NSNumber {
-    var value = first.doubleValue + second.doubleValue
+    let value = first.doubleValue + second.doubleValue
     return NSNumber(double: value)
 }
 
 ///Multiply two numbers
 public func * (first: NSNumber, second:NSNumber) -> NSNumber {
-    var value = first.doubleValue * second.doubleValue
+    let value = first.doubleValue * second.doubleValue
     return NSNumber(double: value)
 }
 
 ///Divide two numbers
 public func / (first: NSNumber, second:NSNumber) -> NSNumber {
-    var value = first.doubleValue / second.doubleValue
+    let value = first.doubleValue / second.doubleValue
     return NSNumber(double: value)
 }
 
 ///Postfix decrement two numbers
 public postfix func -- (first: NSNumber) -> NSNumber {
-    var value = first.floatValue - 1.0
+    let value = first.floatValue - 1.0
     return NSNumber(float: value)
 }
 
 ///Postfix increment two numbers
 public postfix func ++ (first: NSNumber) -> NSNumber {
-    var value = first.floatValue + 1.0
+    let value = first.floatValue + 1.0
     return NSNumber(float: value)
 }
 

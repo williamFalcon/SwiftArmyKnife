@@ -34,7 +34,7 @@ extension UIImageView {
     convenience init(_imageName:String) {
         self.init()
 
-        var image = UIImage(named: _imageName)
+        let image = UIImage(named: _imageName)
         self.image = image
         
         if let im = image {
@@ -45,7 +45,7 @@ extension UIImageView {
     /// Tints imageView
     func _tintWithColor(color:UIColor) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            var coloredImage = self.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+            let coloredImage = self.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
             self.image = coloredImage
             self.tintColor = color
         })

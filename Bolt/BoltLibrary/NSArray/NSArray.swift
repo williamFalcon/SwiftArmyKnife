@@ -30,13 +30,22 @@ import UIKit
 
 extension NSArray {
     
+    func _isLastIndex(index:Int) -> Bool {
+        return (index == count - 1)
+    }
+    
     ///Joins an array of strings using the separator
     func _joinWithSeparator(separator:String) -> String {
         
         var joined = String()
-        for obj in self {
-            var string = obj as! String
-            joined = joined + string + separator
+        for (idx,obj) in self.enumerate() {
+            let string = obj as! String
+            
+            if !(_isLastIndex(idx)) {
+                joined = joined + string + separator
+            }else {
+                joined = joined + string
+            }
         }
         
         return joined
@@ -44,7 +53,7 @@ extension NSArray {
     
     ///helps prevent out of bounds access
     func _indexInBounds(index:Int) -> Bool {
-        var inBounds = (self.count-1) >= index
+        let inBounds = (self.count-1) >= index
         return inBounds
     }
     
@@ -53,7 +62,7 @@ extension NSArray {
         
         var joined = String()
         for obj in self {
-            var value = obj.valueForKey(key) as! String
+            let value = obj.valueForKey(key) as! String
             joined = joined + value + separator
         }
         

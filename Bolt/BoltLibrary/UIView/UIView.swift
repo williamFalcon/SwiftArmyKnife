@@ -32,8 +32,8 @@ extension UIView {
     /// Draws a line at the top of the cell
     func _topBorder(lineWidth: CGFloat, strokeWidth:CGFloat, ofColor color:UIColor) {
         
-        var startingX = (self.bounds.size.width - lineWidth)/2
-        var endingX = startingX + lineWidth
+        let startingX = (self.bounds.size.width - lineWidth)/2
+        let endingX = startingX + lineWidth
         
         _drawLineFromPoint(CGPoint(x: startingX, y: 0), toPoint: CGPoint(x: endingX, y: 0), ofColor: color, strokeWidth: strokeWidth)
     }
@@ -41,9 +41,9 @@ extension UIView {
     /// Draws a line at the bottom of the cell
     func _bottomBorder(lineWidth: CGFloat, strokeWidth:CGFloat, ofColor color:UIColor) {
         
-        var y : CGFloat = self.frame.size.height
-        var startingX = (self.bounds.size.width - lineWidth)/2
-        var endingX = startingX + lineWidth
+        let y : CGFloat = self.frame.size.height
+        let startingX = (self.bounds.size.width - lineWidth)/2
+        let endingX = startingX + lineWidth
         
         _drawLineFromPoint(CGPoint(x: startingX, y: y), toPoint: CGPoint(x: endingX, y: y), ofColor: color, strokeWidth: strokeWidth)
     }
@@ -52,12 +52,12 @@ extension UIView {
     func _drawLineFromPoint(start : CGPoint, toPoint end:CGPoint, ofColor lineColor: UIColor,strokeWidth width:CGFloat) {
         
         //design the path
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         path.moveToPoint(start)
         path.addLineToPoint(end)
         
         //design path in layer
-        var shapeLayer = CAShapeLayer()
+        let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.CGPath
         shapeLayer.strokeColor = lineColor.CGColor
         shapeLayer.lineWidth = width
@@ -67,8 +67,8 @@ extension UIView {
     
     ///Returns the center point of this view in its superview
     func _centerPointInSuperview() -> CGPoint {
-        var x = CGRectGetMidX(self.bounds)
-        var y = CGRectGetMidY(self.bounds)
+        let x = CGRectGetMidX(self.bounds)
+        let y = CGRectGetMidY(self.bounds)
         return CGPointMake(x, y)
     }
     
@@ -102,7 +102,7 @@ extension UIView {
     
     ///Center point inside this view
     func _innerCenter() -> CGPoint {
-        var point = CGPoint(x: self.bounds.width/2, y: self.bounds.height/2)
+        let point = CGPoint(x: self.bounds.width/2, y: self.bounds.height/2)
         return point
     }
     

@@ -30,9 +30,14 @@ import UIKit
 
 extension UIColor {
     
+    ///Instantiate by passing numbers 0-255
+    convenience init(_red:CGFloat, _green:CGFloat, _blue:CGFloat, _alpha:CGFloat) {
+        self.init(red: _red/255, green: _green/255, blue: _blue/255, alpha: _alpha)
+    }
+    
     ///Scale a color to a different color using a scaling coefficient.
     ///Coefficient (lightr) 0 -> 1.0 (Darkere)
-    func _scaledColor(#coeff:CGFloat) -> UIColor {
+    func _scaledColor(coeff coeff:CGFloat) -> UIColor {
         var red : CGFloat = 0.0
         var green : CGFloat = 0.0
         var blue : CGFloat = 0.0
@@ -40,7 +45,7 @@ extension UIColor {
         
         self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
         
-        var scaledColor = UIColor(red: red*coeff, green: green*coeff, blue: blue*coeff, alpha: alpha*coeff)
+        let scaledColor = UIColor(red: red*coeff, green: green*coeff, blue: blue*coeff, alpha: alpha*coeff)
         return scaledColor
     }
     

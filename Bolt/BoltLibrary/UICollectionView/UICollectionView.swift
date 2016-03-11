@@ -32,11 +32,11 @@ extension UICollectionView {
     /// Maximizes the height of a cell
     func _maxCellHeightForItemsCount(count:NSInteger, maxWidth width:CGFloat) -> CGFloat {
         
-        var count : CGFloat = CGFloat(count)
-        var contentSize = self.bounds
-        var maxRowItems = floor(contentSize.width/width)
-        var rows =  ceil(count / maxRowItems)
-        var cellHeight = contentSize.height/rows
+        let count : CGFloat = CGFloat(count)
+        let contentSize = self.bounds
+        let maxRowItems = floor(contentSize.width/width)
+        let rows =  ceil(count / maxRowItems)
+        let cellHeight = contentSize.height/rows
         
         return cellHeight
     }
@@ -44,10 +44,10 @@ extension UICollectionView {
     ///Scrolls to a section at the given indexpath
     func _scrollToSectionAtIndex(indexPath:NSIndexPath, animated:Bool) {
         
-        var offsetY : CGFloat = self.layoutAttributesForSupplementaryElementOfKind(UICollectionElementKindSectionHeader , atIndexPath: indexPath)!.frame.origin.y
-        var contentInsetY : CGFloat = self.contentInset.top
-        var layout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        var sectionInsetY : CGFloat = layout.sectionInset.top
+        let offsetY : CGFloat = self.layoutAttributesForSupplementaryElementOfKind(UICollectionElementKindSectionHeader , atIndexPath: indexPath)!.frame.origin.y
+        let contentInsetY : CGFloat = self.contentInset.top
+        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+        let sectionInsetY : CGFloat = layout.sectionInset.top
         
         self.setContentOffset(CGPoint(x: self.contentOffset.x, y: offsetY-contentInsetY-sectionInsetY), animated: animated)
     }
@@ -55,10 +55,10 @@ extension UICollectionView {
     ///Scrolls to a section at the given index
     func _scrollToSectionAtIndex(indexPath:NSIndexPath, withAddedOffset addedOffset:CGPoint, animated:Bool) {
         
-        var offsetY : CGFloat = self.layoutAttributesForSupplementaryElementOfKind(UICollectionElementKindSectionHeader , atIndexPath: indexPath)!.frame.origin.y
-        var contentInsetY : CGFloat = self.contentInset.top
-        var layout = self.collectionViewLayout as! UICollectionViewFlowLayout
-        var sectionInsetY : CGFloat = layout.sectionInset.top
+        let offsetY : CGFloat = self.layoutAttributesForSupplementaryElementOfKind(UICollectionElementKindSectionHeader , atIndexPath: indexPath)!.frame.origin.y
+        let contentInsetY : CGFloat = self.contentInset.top
+        let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
+        let sectionInsetY : CGFloat = layout.sectionInset.top
         
         self.setContentOffset(CGPoint(x: self.contentOffset.x + addedOffset.x, y:( offsetY-contentInsetY-sectionInsetY) + addedOffset.y), animated: animated)
     }

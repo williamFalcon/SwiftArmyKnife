@@ -46,6 +46,10 @@ class GCD: NSObject {
             closure()
         })
     }
+    
+    class func _dispatchToBackgroundQueueWithPriority(priority:Int, closure:()->()) {
+        dispatch_async(dispatch_get_global_queue(priority, 0), closure)
+    }
 
     ///Dispatches code once
     class func _dispatchOnce(closure:()->()) {

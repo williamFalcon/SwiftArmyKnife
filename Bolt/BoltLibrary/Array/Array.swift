@@ -28,7 +28,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import UIKit
+import Foundation
 
 
 extension Array {
@@ -38,14 +38,14 @@ extension Array {
     Author: William
     Finds index of an object
     
-    :param: array Array to search in
-    :param: object Object to find the index of
-    :returns: Object object found or nil
+    - parameter array: Array to search in
+    - parameter object: Object to find the index of
+    - returns: Object object found or nil
     */
     
     func _indexOf <T: Equatable> (item: T) -> Int? {
         if item is Element {
-            return Swift.find(unsafeBitCast(self, [T].self), item)
+            return unsafeBitCast(self, [T].self).indexOf(item)
         }
         
         return nil
@@ -53,7 +53,7 @@ extension Array {
     
     /// helps prevent out of bounds access
     func _indexInBounds(index:Int) -> Bool {
-        var inBounds = (self.count-1) >= index
+        let inBounds = (self.count-1) >= index
         return inBounds
     }
     
@@ -62,8 +62,8 @@ extension Array {
         return items._allTrue { self._indexOf($0) >= 0 }
     }
     
-    func _countAsFloat() -> CGFloat {
-        return CGFloat(self.count)
+    func _countAsFloat() -> Float {
+        return Float(self.count)
     }
     
     func _removeFirst() -> Array {
@@ -78,12 +78,21 @@ extension Array {
     func _joinWithSeparator(separator:String) -> String {
         
         var joined = String()
-        for obj in self {
-            var string = obj as! String
-            joined = joined + string + separator
+        for (idx,obj) in self.enumerate() {
+            let string = obj as! String
+            
+            if !(_isLastIndex(idx)) {
+                joined = joined + string + separator
+            }else {
+                joined = joined + string
+            }
         }
         
         return joined
+    }
+    
+    func _isLastIndex(index:Int) -> Bool {
+        return (index == count - 1)
     }
     
     // if all found
@@ -107,8 +116,8 @@ Operator +
 Adds an element to an array
 
 
-:param: elem item to add
-:returns: Array with element added
+- parameter elem: item to add
+- returns: Array with element added
 */
 public func + <T>(inout array: [T], elem: T) -> [T] {
     array.append(elem)
@@ -121,8 +130,8 @@ Operator +=
 Adds an element to an array
 
 
-:param: elem item to add
-:returns: Array with element added
+- parameter elem: item to add
+- returns: Array with element added
 */
 public func += <T>(inout array: [T], elem: T) -> [T] {
     array + elem
@@ -136,8 +145,8 @@ Operator -
 Removes an element from an array
 
 
-:param: elem item to remove
-:returns: Array with element removed
+- parameter elem: item to remove
+- returns: Array with element removed
 */
 public func - <T:Equatable>(inout array: [T], elem: T) -> [T] {
     
@@ -155,8 +164,8 @@ Operator -=
 Removes an element from an array
 
 
-:param: elem item to remove
-:returns: Array with element removed
+- parameter elem: item to remove
+- returns: Array with element removed
 */
 public func -= <T:Equatable>(inout array: [T], elem: T) -> [T] {
     array - elem

@@ -34,11 +34,11 @@ extension Int {
         
         var number = "\(self)"
         
-        var formatThousands = self >= 1000
+        let formatThousands = self >= 1000
         if formatThousands {
-            var leading = floor(CGFloat(self/1000))
-            var remainder = self % 1000
-            var total = leading + (CGFloat(remainder)/1000)
+            let leading = floor(CGFloat(self/1000))
+            let remainder = self % 1000
+            let total = leading + (CGFloat(remainder)/1000)
             
             number = NSString(format: "%.1fk", Float(total) ) as String
         }

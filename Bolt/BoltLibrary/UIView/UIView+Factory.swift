@@ -32,7 +32,7 @@ extension UIView {
     /// Xibs containing this view must be named after this class.
     /// Ex: MyView   ->  MyView.xib
     class func _newInstance() -> UIView {
-        var name = _xibName()
+        let name = _xibName()
         return _newInstanceFromXibNamed(name)
     }
     
@@ -41,6 +41,7 @@ extension UIView {
         let views = NSBundle.mainBundle().loadNibNamed(xibName, owner: self, options: nil)
         return views[0] as! UIView
     }
+    
     
     /// Returns the name of the xib
     class func _xibName() -> String {

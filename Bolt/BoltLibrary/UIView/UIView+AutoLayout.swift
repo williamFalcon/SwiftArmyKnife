@@ -35,11 +35,9 @@ extension UIView {
         @return An instance of NSLayoutConstraint
     */
     func tb_widthConstraint() -> NSLayoutConstraint? {
-        for item in constraints() {
-            if let constraint = item as? NSLayoutConstraint {
-                if constraint.firstAttribute == NSLayoutAttribute.Width {
-                    return constraint
-                }
+        for item in constraints {
+            if item.firstAttribute == NSLayoutAttribute.Width {
+                return item
             }
         }
         
@@ -51,11 +49,9 @@ extension UIView {
         @return An instance of NSLayoutConstraint
     */
     func tb_heightConstraint() -> NSLayoutConstraint? {
-        for item in constraints() {
-            if let constraint = item as? NSLayoutConstraint {
-                if constraint.firstAttribute == NSLayoutAttribute.Height {
-                    return constraint
-                }
+        for item in constraints {
+            if item.firstAttribute == NSLayoutAttribute.Height {
+                return item
             }
         }
         

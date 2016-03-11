@@ -32,7 +32,7 @@ extension UIScrollView {
 
     ///Scrolls to the top
     func _scrollToTop(animated: Bool) {
-        var top = CGPointMake(0, 0 - self.contentInset.top)
+        let top = CGPointMake(0, 0 - self.contentInset.top)
         self.setContentOffset(top, animated: animated)
     }
 }

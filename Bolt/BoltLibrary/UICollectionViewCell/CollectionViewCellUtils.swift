@@ -35,7 +35,7 @@ extension UICollectionViewCell {
     
     /// Returns the class name of this cell as the identifier.
     override var _cellIdentifier : String {
-        var identifier =  NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last!
+        let identifier =  NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last!
         return identifier
     }
     
@@ -47,7 +47,7 @@ extension UICollectionViewCell {
     //MARK: - Methods
     /// Registers this cell to the passed in collectionView
     class func _registerToCollectionView(cv: UICollectionView) {
-        var name = _className()
+        let name = _className()
         let nib = UINib(nibName: name, bundle: NSBundle.mainBundle())
         cv.registerNib(nib, forCellWithReuseIdentifier: name)
     }

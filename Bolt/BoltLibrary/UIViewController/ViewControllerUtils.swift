@@ -35,14 +35,14 @@ extension UIViewController {
     /// Storyboard containing this VC must be named after this VC.
     /// Ex: MainViewController   ->  Main.storyboard
     class func _newInstance() -> UIViewController {
-        var name = _storyboardName()
+        let name = _storyboardName()
         return _newInstanceFromStoryboardNamed(name)
     }
     
     /// Returns a newly instantiated VC from the input storyboard
     class func _newInstanceFromStoryboardNamed(sbName : String) -> UIViewController {
         let storyboard = UIStoryboard(name: sbName, bundle: NSBundle.mainBundle())
-        let viewController = storyboard.instantiateViewControllerWithIdentifier(_identifier()) as! UIViewController
+        let viewController = storyboard.instantiateViewControllerWithIdentifier(_identifier()) 
         return viewController
     }
     
