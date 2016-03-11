@@ -12,13 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var obj = Beer();
+        let obj = Beer();
         obj.name = "will"
         obj.life = "sugar"
         
-        var obj2 = ["will":"sugar"];
+        let obj2 = ["will":"sugar"];
         
-        var arr = [obj, obj2]
+        let arr = [obj, obj2]
         print(arr._contains(obj))        // Do any additional setup after loading the view, typically from a nib.
     }
 

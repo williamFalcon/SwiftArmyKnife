@@ -17,9 +17,9 @@ class StringTest: XCTestCase {
     */
     func testLength() {
         var n : String?
-        var a = ""
-        var b = "b"
-        var c = "bc"
+        let a = ""
+        let b = "b"
+        let c = "bc"
         
         //run tests
         XCTAssert(a._length == 0, "Pass")
