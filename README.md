@@ -3,7 +3,8 @@ Library for the missing bolts in Swift.
 Help shape Bolt_Swift, become a contributor!
 
 ##To Use
-Include the [BoltLibrary] (https://github.com/williamFalcon/Bolt_Swift/tree/master/Bolt/BoltLibrary) folder in your app.   
+Include the [BoltLibrary] (https://github.com/williamFalcon/Bolt_Swift/tree/master/Bolt/BoltLibrary) folder in your app.  
+-- OR --   
 Cocoapods:
 ```bash
 pod install Bolt_Swift
