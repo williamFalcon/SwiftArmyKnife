@@ -37,7 +37,7 @@ extension UIWindow {
         return currentVC
     }
 
-    private func _topViewController(base: UIViewController? = (UIApplication.sharedApplication().delegate) -> UIViewController? {
+    private func _topViewController(base: UIViewController? = (UIApplication.sharedApplication().delegate as! UIApplicationDelegate) -> UIViewController? {
         if let nav = base as? UINavigationController {
             return _topViewController(nav.visibleViewController)
         }
