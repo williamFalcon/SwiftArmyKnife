@@ -75,7 +75,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/williamFalcon/Bolt_Swift.git", :commit => "995a26d39a0d539716955172d69927b69d589795" }
+  s.source       = { :git => "https://github.com/williamFalcon/Bolt_Swift.git", :commit => "fe32e679a60b7e0b42d84ad84fed4ec15f5b8583" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -114,7 +114,6 @@ Pod::Spec.new do |s|
 
   # s.framework  = "SomeFramework"
   s.ios.frameworks = 'UIKit', 'Foundation', 'libdispatch'
-  s.osx.frameworks = 'UIKit', 'Foundation', 'libdispatch'
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
