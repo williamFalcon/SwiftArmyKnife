@@ -67,7 +67,6 @@ Pod::Spec.new do |s|
   #  When using multiple platforms
   s.ios.deployment_target = "8.0"
   s.osx.deployment_target = "10.7"
-  s.watchos.deployment_target = "2.0"
 
 
   # ――― Source Location ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -88,7 +87,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "Bolt/BoltLibrary/**/*.{swift}"
-  s.exclude_files = "Classes/Exclude"
+  # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -114,7 +113,8 @@ Pod::Spec.new do |s|
   #
 
   # s.framework  = "SomeFramework"
-  # s.frameworks = "SomeFramework", "AnotherFramework"
+  s.ios.frameworks = 'MobileCoreServices', 'SystemConfiguration'
+  s.osx.frameworks = 'CoreServices', 'SystemConfiguration'
 
   # s.library   = "iconv"
   # s.libraries = "iconv", "xml2"
