@@ -1,5 +1,5 @@
 /*
-UICollectionReusableView.swift
+UICollectionViewCell.swift
 Created by William Falcon on 3/25/15.
 
 The MIT License (MIT)
@@ -26,24 +26,23 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import Foundation
 import UIKit
 
 extension UICollectionViewCell {
-    
+
     //MARK: - Computed Properties
-    
+
     /// Returns the class name of this cell as the identifier.
     override var _cellIdentifier : String {
         let identifier =  NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last!
         return identifier
     }
-    
+
     /// Returns the class name of this cell as the identifier.
     override class func _identifier() -> String {
         return _className()
     }
-    
+
     //MARK: - Methods
     /// Registers this cell to the passed in collectionView
     class func _registerToCollectionView(cv: UICollectionView) {
