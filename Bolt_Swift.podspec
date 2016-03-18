@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/williamFalcon/Bolt_Swift.git", :tag=>"v1.1.0" :commit => "056e0c4b461285de308d99ec9880a1b651e2a5d6" }
+  s.source       = { :git => "https://github.com/williamFalcon/Bolt_Swift.git", :tag=>"v1.1.0", :commit => "cbdf23b8e721339ec35ebe96f1e0c7e448068836" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
