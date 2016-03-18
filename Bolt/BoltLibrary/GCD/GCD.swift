@@ -26,10 +26,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-import UIKit
 
 class GCD: NSObject {
-    
+
     ///Executes code with delay
     class func _delay(delay:Double, closure:()->()) {
         dispatch_after(
@@ -39,14 +38,14 @@ class GCD: NSObject {
             ),
             dispatch_get_main_queue(), closure)
     }
-    
+
     ///Places on main q
     class func _dispatchMainQueue(closure:()->()) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             closure()
         })
     }
-    
+
     class func _dispatchToBackgroundQueueWithPriority(priority:Int, closure:()->()) {
         dispatch_async(dispatch_get_global_queue(priority, 0), closure)
     }
