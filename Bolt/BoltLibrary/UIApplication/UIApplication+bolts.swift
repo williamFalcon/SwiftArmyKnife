@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIApplication {
-    
+
     class func _jumpToSettings() {
         if let appSettings = NSURL(string: UIApplicationOpenSettingsURLString) {
             UIApplication.sharedApplication().openURL(appSettings)

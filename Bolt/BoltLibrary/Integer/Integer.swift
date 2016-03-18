@@ -25,24 +25,25 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
-import UIKit
+
+import Foundation
 
 extension Int {
-    
+
     //return a number formatted like 1.3k
     func _shortIntString() -> String {
-        
+
         var number = "\(self)"
-        
+
         let formatThousands = self >= 1000
         if formatThousands {
             let leading = floor(CGFloat(self/1000))
             let remainder = self % 1000
             let total = leading + (CGFloat(remainder)/1000)
-            
+
             number = NSString(format: "%.1fk", Float(total) ) as String
         }
-        
+
         return number
     }
 }
