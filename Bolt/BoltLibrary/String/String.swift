@@ -27,6 +27,7 @@ SOFTWARE.
 */
 
 import Foundation
+import UIKit
 
 /*
 String for swift provides many of the String API convenience methods from javascript (and some from python).
