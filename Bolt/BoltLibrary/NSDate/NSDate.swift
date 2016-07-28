@@ -33,7 +33,7 @@ struct POSIX {
 }
 
 struct DateFormat {
-    static var UTC = "yyyy-MM-dd'T'HH:mm:ss"
+    static var UTC = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 }
 
 extension NSDate {
@@ -74,6 +74,11 @@ extension NSDate {
     ///Add days to the date
     func _addDays(numberOfDays: NSInteger) -> NSDate {
         let newDate = self.dateByAddingTimeInterval(NSTimeInterval(60*60*24*numberOfDays))
+        return newDate
+    }
+    
+    func _addMilliseconds(ms: NSInteger) -> NSDate {
+        let newDate = self.dateByAddingTimeInterval(NSTimeInterval(ms))
         return newDate
     }
 
@@ -120,6 +125,14 @@ extension NSDate {
     ///Returns yes if date is a weekday
     func _isWeekday() -> Bool {
         return !self._isWeekend()
+    }
+    
+    func _dateGMTString() -> NSString {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = DateFormat.UTC
+        formatter.timeZone = NSTimeZone(name: "UTC")
+        
+        return formatter.stringFromDate(self)
     }
 
     ///Private date formatter

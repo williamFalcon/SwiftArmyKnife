@@ -47,4 +47,8 @@ extension Int {
 
         return number
     }
+    
+    func _randomIntFrom(from: UInt32, to:UInt32) -> UInt32 {
+        return arc4random_uniform(to-from) + from;
+    }
 }

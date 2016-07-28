@@ -29,6 +29,14 @@ import UIKit
 
 extension UIView {
     
+    func _addBlur(style: UIBlurEffectStyle) {
+        let blurEffect = UIBlurEffect(style: style)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.bounds
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
+        self.insertSubview(blurEffectView, atIndex: 0)
+    }
+    
     /// Draws a line at the top of the cell
     func _topBorder(lineWidth: CGFloat, strokeWidth:CGFloat, ofColor color:UIColor) {
         

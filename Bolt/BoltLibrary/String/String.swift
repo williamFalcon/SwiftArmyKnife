@@ -289,6 +289,19 @@ extension String {
             return self
         }
     }
+    
+    func _toDateWithFormat(format: String) -> NSDate? {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.dateFromString(self)
+    }
+    
+    func _toDateUTCFormat() -> NSDate? {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SS'Z'"
+        dateFormatter.timeZone = NSTimeZone(name: "GMT")
+        return dateFormatter.dateFromString(self)
+    }
 
     //MARK: - Arranging
     /**
@@ -380,6 +393,7 @@ extension String {
     func _isEmpty() -> Bool {
         return self._length == 0
     }
+    
 }
 
 public func - (string:String, subString:String) -> String {
