@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-extension MKMapView {
+public extension MKMapView {
     
     func _mapWidthInMeters() -> CLLocationDistance {
         let deltaLon = self.region.span.longitudeDelta

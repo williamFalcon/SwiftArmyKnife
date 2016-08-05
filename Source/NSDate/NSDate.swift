@@ -36,7 +36,7 @@ struct DateFormat {
     static var UTC = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
 }
 
-extension NSDate {
+public extension NSDate {
 
     ///The Now time
     class func _now() -> NSDate {

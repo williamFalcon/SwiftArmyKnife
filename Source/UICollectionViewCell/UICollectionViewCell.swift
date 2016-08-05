@@ -28,7 +28,7 @@ SOFTWARE.
 
 import UIKit
 
-extension UICollectionViewCell {
+public extension UICollectionViewCell {
 
     //MARK: - Computed Properties
 

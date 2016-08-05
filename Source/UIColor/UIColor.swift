@@ -28,7 +28,7 @@ SOFTWARE.
 
 import UIKit
 
-extension UIColor {
+public extension UIColor {
     
     ///Instantiate by passing numbers 0-255
     convenience init(_red:CGFloat, _green:CGFloat, _blue:CGFloat, _alpha:CGFloat) {

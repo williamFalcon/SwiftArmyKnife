@@ -27,7 +27,7 @@ SOFTWARE.
 */
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     func _addBlur(style: UIBlurEffectStyle) {
         let blurEffect = UIBlurEffect(style: style)

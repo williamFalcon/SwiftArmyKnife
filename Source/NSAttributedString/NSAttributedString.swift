@@ -28,7 +28,7 @@ SOFTWARE.
 
 import Foundation
 
-extension NSAttributedString {
+public extension NSAttributedString {
     
 }
 

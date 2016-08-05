@@ -28,7 +28,7 @@ SOFTWARE.
 
 import UIKit
 
-extension UIImageView {
+public extension UIImageView {
     
     ///Init with an image name
     convenience init(_imageName:String) {

@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-extension UIApplication {
+public extension UIApplication {
 
     class func _jumpToSettings() {
         if let appSettings = NSURL(string: UIApplicationOpenSettingsURLString) {

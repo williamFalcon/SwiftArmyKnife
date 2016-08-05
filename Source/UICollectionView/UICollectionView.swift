@@ -27,7 +27,7 @@ SOFTWARE.
 */
 import UIKit
 
-extension UICollectionView {
+public extension UICollectionView {
     
     /// Maximizes the height of a cell
     func _maxCellHeightForItemsCount(count:NSInteger, maxWidth width:CGFloat) -> CGFloat {

@@ -9,7 +9,7 @@
 import UIKit
 
 
-extension NSDictionary {
+public extension NSDictionary {
     
     class func _jsonFromFileName(name:String) -> AnyObject? {
 

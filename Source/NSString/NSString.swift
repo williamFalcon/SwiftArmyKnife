@@ -27,7 +27,7 @@ SOFTWARE.
 */
 
 import Foundation
-extension NSString {
+public extension NSString {
     
     ///Returns yes if the NSString contains the REGEX pattern
     func _containsPattern(pattern:String)-> Bool {

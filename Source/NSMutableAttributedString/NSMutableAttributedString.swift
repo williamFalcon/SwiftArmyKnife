@@ -29,7 +29,7 @@ SOFTWARE.
 import Foundation
 import UIKit
 
-extension NSMutableAttributedString {
+public extension NSMutableAttributedString {
 
     ///Returns range of whole string (0->length)
     func _fullRange() -> NSRange {

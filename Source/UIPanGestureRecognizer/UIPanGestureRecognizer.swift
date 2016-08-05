@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIPanGestureRecognizer {
+public extension UIPanGestureRecognizer {
 
     func _draggedLeftInView(inputView:UIView) -> Bool {
         let velocity = self.velocityInView(inputView)

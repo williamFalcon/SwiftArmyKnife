@@ -29,7 +29,7 @@ SOFTWARE.
 import Foundation
 import UIKit
 
-extension NSArray {
+public extension NSArray {
 
     func _isLastIndex(index:Int) -> Bool {
         return (index == count - 1)

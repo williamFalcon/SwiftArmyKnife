@@ -32,7 +32,7 @@ import UIKit
 /*
 String for swift provides many of the String API convenience methods from javascript (and some from python).
 */
-extension String {
+public extension String {
 
     /**
     Returns length of the string

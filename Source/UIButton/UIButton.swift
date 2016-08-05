@@ -28,7 +28,7 @@ SOFTWARE.
 
 import UIKit
 
-extension UIButton {
+public extension UIButton {
 
     //MARK: - Tinted Button
     ///Sets image tint of an image for a state

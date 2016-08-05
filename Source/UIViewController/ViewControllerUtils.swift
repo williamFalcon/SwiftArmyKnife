@@ -30,7 +30,7 @@ import Foundation
 import UIKit
 
 
-extension UIViewController {
+public extension UIViewController {
     
     /// Storyboard containing this VC must be named after this VC.
     /// Ex: MainViewController   ->  Main.storyboard

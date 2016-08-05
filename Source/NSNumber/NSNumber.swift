@@ -31,7 +31,7 @@ import Foundation
 infix operator -- {}
 infix operator ++ {}
 
-extension NSNumber {
+public extension NSNumber {
     
     ///Returns the number with the default currency of the device
     ///ex: $3.00

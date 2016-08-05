@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension UIViewController {
+public extension UIViewController {
     
     ///Presents an alert controller with OK button
     func _presentAlertControllerWithTitle(title: String, message: String, defaultButtonTitle:String) {

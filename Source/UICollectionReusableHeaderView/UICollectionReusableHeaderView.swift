@@ -28,7 +28,7 @@ SOFTWARE.
 
 import UIKit
 
-extension UICollectionReusableView {
+public extension UICollectionReusableView {
     
     //MARK: - Computed Properties
     var _cellIdentifier : String {

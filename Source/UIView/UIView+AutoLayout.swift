@@ -28,7 +28,7 @@ SOFTWARE.
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     
     /*!
         @brief Returns the width constraint of a UIView if it exists

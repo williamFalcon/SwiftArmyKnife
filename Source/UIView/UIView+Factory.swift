@@ -28,7 +28,7 @@ SOFTWARE.
 
 import UIKit
 
-extension UIView {
+public extension UIView {
     /// Xibs containing this view must be named after this class.
     /// Ex: MyView   ->  MyView.xib
     class func _newInstance() -> UIView {

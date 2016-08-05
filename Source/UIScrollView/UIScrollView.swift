@@ -28,7 +28,7 @@ SOFTWARE.
 
 import UIKit
 
-extension UIScrollView {
+public extension UIScrollView {
 
     ///Scrolls to the top
     func _scrollToTop(animated: Bool) {

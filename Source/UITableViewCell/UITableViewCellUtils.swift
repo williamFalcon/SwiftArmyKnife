@@ -30,7 +30,7 @@ SOFTWARE.
 import Foundation
 import UIKit
 
-extension UITableViewCell {
+public extension UITableViewCell {
     
     //MARK: - Computed Properties
     /// Returns the class name of this cell as the identifier.

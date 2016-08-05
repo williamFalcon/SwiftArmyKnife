@@ -29,7 +29,7 @@ SOFTWARE.
 import Foundation
 import UIKit
 
-extension Int {
+public extension Int {
 
     //return a number formatted like 1.3k
     func _shortIntString() -> String {

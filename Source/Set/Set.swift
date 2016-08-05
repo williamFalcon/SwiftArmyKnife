@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension Set {
+public extension Set {
     
     /**
     Returns char at an index

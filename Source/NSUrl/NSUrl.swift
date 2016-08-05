@@ -8,7 +8,7 @@
 
 import Foundation
 
-extension NSURL {
+public extension NSURL {
     
     func _parameters() -> NSDictionary? {
         

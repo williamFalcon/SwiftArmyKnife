@@ -29,10 +29,10 @@ SOFTWARE.
 import UIKit
 import Foundation
 
-class GCD: NSObject {
+public class GCD: NSObject {
 
     ///Executes code with delay
-    class func _delay(delay:Double, closure:()->()) {
+    public class func _delay(delay:Double, closure:()->()) {
         dispatch_after(
             dispatch_time(
                 DISPATCH_TIME_NOW,
@@ -42,18 +42,18 @@ class GCD: NSObject {
     }
 
     ///Places on main q
-    class func _dispatchMainQueue(closure:()->()) {
+    public class func _dispatchMainQueue(closure:()->()) {
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
             closure()
         })
     }
 
-    class func _dispatchToBackgroundQueueWithPriority(priority:Int, closure:()->()) {
+    public class func _dispatchToBackgroundQueueWithPriority(priority:Int, closure:()->()) {
         dispatch_async(dispatch_get_global_queue(priority, 0), closure)
     }
 
     ///Dispatches code once
-    class func _dispatchOnce(closure:()->()) {
+    public class func _dispatchOnce(closure:()->()) {
         var token: dispatch_once_t = 0
         dispatch_once(&token) {
             closure()
