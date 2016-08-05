@@ -1,7 +1,7 @@
 #SwiftArmyKnife
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftArmyKnife.svg)](http://cocoapods.org/pods/SwiftArmyKnife)    
-[![Platform](https://img.shields.io/cocoapods/p/SwiftArmyKnife.svg?style=flat)](http://cocoapods.org/pods/SwiftArmyKnife)     
-[![License](https://img.shields.io/cocoapods/l/SwiftArmyKnife.svg?style=flat)](http://cocoapods.org/pods/SwiftArmyKnife)    
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/SwiftArmyKnife.svg)](http://cocoapods.org/pods/SwiftArmyKnife) 
+[![Platform](https://img.shields.io/cocoapods/p/SwiftArmyKnife.svg?style=flat)](http://cocoapods.org/pods/SwiftArmyKnife) 
+[![License](https://img.shields.io/cocoapods/l/SwiftArmyKnife.svg?style=flat)](http://cocoapods.org/pods/SwiftArmyKnife)
     
 ## What is it?     
 Collection of low level Swift extensions
