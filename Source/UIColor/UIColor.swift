@@ -37,7 +37,7 @@ public extension UIColor {
     
     ///Scale a color to a different color using a scaling coefficient.
     ///Coefficient (lightr) 0 -> 1.0 (Darkere)
-    func _scaledColor(coeff coeff:CGFloat) -> UIColor {
+    func _scaledColor(coeff:CGFloat) -> UIColor {
         var red : CGFloat = 0.0
         var green : CGFloat = 0.0
         var blue : CGFloat = 0.0

@@ -80,8 +80,12 @@ public extension String {
     Returns string in a range
     Example: string[0...2] == "abc"
     */
-    subscript (range: Range<Int>) -> String {
-        return substring(with: Range(start: startIndex.advancedBy(range.startIndex), end: startIndex.advancedBy(range.endIndex)))
+    subscript (r: CountableClosedRange<Int>) -> String {
+        get {
+            let startIndex =  self.index(self.startIndex, offsetBy: r.lowerBound)
+            let endIndex = self.index(startIndex, offsetBy: r.upperBound - r.lowerBound)
+            return self[startIndex...endIndex]
+        }
     }
 
     //MARK: - Searching
@@ -244,7 +248,7 @@ public extension String {
     Splits a string into an array of substrings
     */
     func _splitOn(separator: String) -> [String] {
-        let results = self.componentsSeparatedByString(separator)
+        let results = self.components(separatedBy: separator)
         return results
     }
     //MARK: - Formatting
@@ -257,7 +261,7 @@ public extension String {
         var result : String = self
         if let r = regex {
             if let rep = replacement {
-                result = self.stringByReplacingOccurrencesOfString(r, withString: rep, options: NSString.CompareOptions.RegularExpressionSearch, range: nil)
+                result = replacingOccurrences(of: r, with: rep, options: .regularExpression, range: nil)
             }
         }
 
@@ -268,7 +272,7 @@ public extension String {
     Removes whitespace from both ends of a string
     */
     func _trim() -> String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
+        return self.trimmingCharacters(in: .whitespaces)
     }
 
     /**
@@ -276,7 +280,7 @@ public extension String {
     */
     func _trimLastChar() -> String {
         if self._length > 0 {
-            return self[0..<self._length-1]
+            return self._substringToIndex(index: self._length - 1)!
         }else {
             return self
         }
@@ -287,23 +291,23 @@ public extension String {
     */
     func _trimFirstChar() -> String {
         if self._length > 0 {
-            return self[1..<self._length]
+            return self._substringFromIndex(index: 1)!
         }else {
             return self
         }
     }
     
-    func _toDateWithFormat(format: String) -> NSDate? {
+    func _toDateWithFormat(format: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        return dateFormatter.date(from: self) as NSDate?
+        return dateFormatter.date(from: self) as Date?
     }
     
-    func _toDateUTCFormat() -> NSDate? {
+    func _toDateUTCFormat() -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SS'Z'"
         dateFormatter.timeZone = NSTimeZone(name: "GMT") as TimeZone!
-        return dateFormatter.date(from: self) as NSDate?
+        return dateFormatter.date(from: self) as Date?
     }
 
     //MARK: - Arranging

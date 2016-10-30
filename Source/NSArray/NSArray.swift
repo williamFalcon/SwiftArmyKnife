@@ -63,7 +63,7 @@ public extension NSArray {
 
         var joined = String()
         for obj in self {
-            let value = (obj as AnyObject).value(key) as! String
+            let value = (obj as AnyObject).value(forKey: key) as! String
             joined = joined + value + separator
         }
 
