@@ -11,12 +11,12 @@ import UIKit
 public extension UIPanGestureRecognizer {
 
     func _draggedLeftInView(inputView:UIView) -> Bool {
-        let velocity = self.velocityInView(inputView)
+        let velocity = self.velocity(in: inputView)
         return !(velocity.x > 0)
     }
 
     func _isHorizontalInView(inputView:UIView) -> Bool {
-        let velocity = self.velocityInView(inputView)
+        let velocity = self.velocity(in: inputView)
         return (velocity.y > 0)
     }
 }

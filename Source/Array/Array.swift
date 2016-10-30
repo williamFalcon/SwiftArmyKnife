@@ -45,7 +45,7 @@ public extension Array {
     
     func _indexOf <T: Equatable> (item: T) -> Int? {
         if item is Element {
-            return unsafeBitCast(self, [T].self).indexOf(item)
+            return unsafeBitCast(self, to: [T].self).index(of: item)
         }
         
         return nil
@@ -59,7 +59,7 @@ public extension Array {
     
     // Contains an element
     func _contains <T: Equatable> (items: T...) -> Bool {
-        return items._allTrue { self._indexOf($0) >= 0 }
+        return items._allTrue { self._indexOf(item: $0)! >= 0 }
     }
     
     func _countAsFloat() -> Float {
@@ -69,7 +69,7 @@ public extension Array {
     func _removeFirst() -> Array {
         var copy = self
         if !copy.isEmpty {
-            copy.removeAtIndex(0)
+            copy.remove(at: 0)
         }
         return copy
     }
@@ -78,10 +78,10 @@ public extension Array {
     func _joinWithSeparator(separator:String) -> String {
         
         var joined = String()
-        for (idx,obj) in self.enumerate() {
+        for (idx,obj) in self.enumerated() {
             let string = obj as! String
             
-            if !(_isLastIndex(idx)) {
+            if !(_isLastIndex(index: idx)) {
                 joined = joined + string + separator
             }else {
                 joined = joined + string
@@ -119,7 +119,7 @@ Adds an element to an array
 - parameter elem: item to add
 - returns: Array with element added
 */
-public func + <T>(inout array: [T], elem: T) -> [T] {
+public func + <T>( array: inout [T], elem: T) -> [T] {
     array.append(elem)
     return array
 }
@@ -133,9 +133,8 @@ Adds an element to an array
 - parameter elem: item to add
 - returns: Array with element added
 */
-public func += <T>(inout array: [T], elem: T) -> [T] {
-    array + elem
-    return array
+public func += <T>( array: inout [T], elem: T) -> [T] {
+    return array + elem
 }
 
 //MARK: - Remove
@@ -148,10 +147,10 @@ Removes an element from an array
 - parameter elem: item to remove
 - returns: Array with element removed
 */
-public func - <T:Equatable>(inout array: [T], elem: T) -> [T] {
-    
-    if let index = array._indexOf(elem) {
-        array.removeAtIndex(index)
+public func - <T:Equatable>( array: inout [T], elem: T) -> [T] {
+  
+    if let index = array._indexOf(item: elem) {
+        array.remove(at: index)
     }
     return array
 }
@@ -167,9 +166,8 @@ Removes an element from an array
 - parameter elem: item to remove
 - returns: Array with element removed
 */
-public func -= <T:Equatable>(inout array: [T], elem: T) -> [T] {
-    array - elem
-    return array
+public func -= <T:Equatable>( array: inout [T], elem: T) -> [T] {
+    return array - elem
 }
 
 

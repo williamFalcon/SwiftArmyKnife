@@ -39,8 +39,8 @@ public extension MKMapView {
         
         for annotation in self.annotations {
             if !(annotation is MKUserLocation) {
-                if let annotationView = self.viewForAnnotation(annotation){
-                    self._scaleAnnotation(annotationView, maxZoomScale: maxZoomScale, maxAnnotationSize: maxAnnotationSize, minAnnotationSize: minAnnotationSize, onComplete: nil)
+                if let annotationView = self.view(for: annotation){
+                    self._scaleAnnotation(annotationView: annotationView, maxZoomScale: maxZoomScale, maxAnnotationSize: maxAnnotationSize, minAnnotationSize: minAnnotationSize, onComplete: nil)
                 }
                 
             }
@@ -67,13 +67,11 @@ public extension MKMapView {
         frame.size.width = newWidth
         frame.size.height = newWidth
         
-        
-        GCD._dispatchMainQueue {
+        DispatchQueue.main.async {
             annotationView.frame = frame
             annotationView.center = center
             onComplete?()
         }
-
     }
     
 }

@@ -33,8 +33,8 @@ public extension UIView {
         let blurEffect = UIBlurEffect(style: style)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight] // for supporting device rotation
-        self.insertSubview(blurEffectView, atIndex: 0)
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation
+        self.insertSubview(blurEffectView, at: 0)
     }
     
     /// Draws a line at the top of the cell
@@ -43,7 +43,7 @@ public extension UIView {
         let startingX = (self.bounds.size.width - lineWidth)/2
         let endingX = startingX + lineWidth
         
-        _drawLineFromPoint(CGPoint(x: startingX, y: 0), toPoint: CGPoint(x: endingX, y: 0), ofColor: color, strokeWidth: strokeWidth)
+        _drawLineFromPoint(start: CGPoint(x: startingX, y: 0), toPoint: CGPoint(x: endingX, y: 0), ofColor: color, strokeWidth: strokeWidth)
     }
     
     /// Draws a line at the bottom of the cell
@@ -53,7 +53,7 @@ public extension UIView {
         let startingX = (self.bounds.size.width - lineWidth)/2
         let endingX = startingX + lineWidth
         
-        _drawLineFromPoint(CGPoint(x: startingX, y: y), toPoint: CGPoint(x: endingX, y: y), ofColor: color, strokeWidth: strokeWidth)
+        _drawLineFromPoint(start: CGPoint(x: startingX, y: y), toPoint: CGPoint(x: endingX, y: y), ofColor: color, strokeWidth: strokeWidth)
     }
     
     /// Draws a line between two points. Stroke width is the thickness of the line
@@ -61,13 +61,13 @@ public extension UIView {
         
         //design the path
         let path = UIBezierPath()
-        path.moveToPoint(start)
-        path.addLineToPoint(end)
+        path.move(to: start)
+        path.addLine(to: end)
         
         //design path in layer
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.CGPath
-        shapeLayer.strokeColor = lineColor.CGColor
+        shapeLayer.path = path.cgPath
+        shapeLayer.strokeColor = lineColor.cgColor
         shapeLayer.lineWidth = width
         
         self.layer.addSublayer(shapeLayer)
@@ -75,9 +75,9 @@ public extension UIView {
     
     ///Returns the center point of this view in its superview
     func _centerPointInSuperview() -> CGPoint {
-        let x = CGRectGetMidX(self.bounds)
-        let y = CGRectGetMidY(self.bounds)
-        return CGPointMake(x, y)
+        let x = self.bounds.midX
+        let y = self.bounds.midY
+        return CGPoint(x: x, y: y)
     }
     
     /// Center point at the bottom of the view
@@ -144,7 +144,7 @@ public extension UIView {
     
     ///Removes swift class identifiers and returns clean class name
     class func _className() -> String {
-        return NSStringFromClass(self.classForCoder()).componentsSeparatedByString(".").last! as String
+        return NSStringFromClass(type(of: self) as! AnyClass).components(separatedBy: ".")[0] as String
     }
 }
 

@@ -33,18 +33,18 @@ public extension UIView {
     /// Ex: MyView   ->  MyView.xib
     class func _newInstance() -> UIView {
         let name = _xibName()
-        return _newInstanceFromXibNamed(name)
+        return _newInstanceFromXibNamed(xibName: name)
     }
     
     /// Returns a newly instantiated view from the input xib
     class func _newInstanceFromXibNamed(xibName : String) -> UIView {
-        let views = NSBundle.mainBundle().loadNibNamed(xibName, owner: self, options: nil)
-        return views[0] as! UIView
+        let views = Bundle.main.loadNibNamed(xibName, owner: self, options: nil)
+        return views![0] as! UIView
     }
     
     
     /// Returns the name of the xib
     class func _xibName() -> String {
-        return NSStringFromClass(self.classForCoder()).componentsSeparatedByString(".").last!
+        return NSStringFromClass(type(of: self) as! AnyClass).components(separatedBy: ".")[0]
     }
 }

@@ -44,7 +44,7 @@ public extension UICollectionView {
     ///Scrolls to a section at the given indexpath
     func _scrollToSectionAtIndex(indexPath:NSIndexPath, animated:Bool) {
         
-        let offsetY : CGFloat = self.layoutAttributesForSupplementaryElementOfKind(UICollectionElementKindSectionHeader , atIndexPath: indexPath)!.frame.origin.y
+        let offsetY : CGFloat = self.layoutAttributesForSupplementaryElement(ofKind: UICollectionElementKindSectionHeader , at: indexPath as IndexPath)!.frame.origin.y
         let contentInsetY : CGFloat = self.contentInset.top
         let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
         let sectionInsetY : CGFloat = layout.sectionInset.top
@@ -55,7 +55,7 @@ public extension UICollectionView {
     ///Scrolls to a section at the given index
     func _scrollToSectionAtIndex(indexPath:NSIndexPath, withAddedOffset addedOffset:CGPoint, animated:Bool) {
         
-        let offsetY : CGFloat = self.layoutAttributesForSupplementaryElementOfKind(UICollectionElementKindSectionHeader , atIndexPath: indexPath)!.frame.origin.y
+        let offsetY : CGFloat = self.layoutAttributesForSupplementaryElement(ofKind: UICollectionElementKindSectionHeader , at: indexPath as IndexPath)!.frame.origin.y
         let contentInsetY : CGFloat = self.contentInset.top
         let layout = self.collectionViewLayout as! UICollectionViewFlowLayout
         let sectionInsetY : CGFloat = layout.sectionInset.top

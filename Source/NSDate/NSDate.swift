@@ -1,3 +1,4 @@
+
 /*
 NSDate.swift
 Created by William Falcon on 2/15/15.
@@ -46,39 +47,39 @@ public extension NSDate {
     ///Now time in Eastern Standard Time
     class func _nowEST() -> NSDate {
         let locale = NSLocale(localeIdentifier: POSIX.US)
-        let formatter = NSDateFormatter()
-        formatter.locale = locale
+        let formatter = DateFormatter()
+        formatter.locale = locale as Locale!
         formatter.dateFormat = DateFormat.UTC
-        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0)
+        formatter.timeZone = NSTimeZone(forSecondsFromGMT: 0) as TimeZone!
 
-        return formatter.dateFromString(NSDate._now().description)!
+        return formatter.date(from: NSDate._now().description)! as NSDate
     }
 
     ///returns utc timestamp
     func _UTCTimestamp() -> String {
-        return _dateString(DateFormat.UTC)
+        return _dateString(format: DateFormat.UTC)
     }
 
     ///Date tomorrow
     class func _tomorrow() -> NSDate {
         let date = _now()
-        return date._addDays(1)
+        return date._addDays(numberOfDays: 1)
     }
 
     ///Date yesterday
     class func _yesterday() -> NSDate {
         let date = _now()
-        return date._addDays(-1)
+        return date._addDays(numberOfDays: -1)
     }
 
     ///Add days to the date
     func _addDays(numberOfDays: NSInteger) -> NSDate {
-        let newDate = self.dateByAddingTimeInterval(NSTimeInterval(60*60*24*numberOfDays))
+        let newDate = self.addingTimeInterval(TimeInterval(60*60*24*numberOfDays))
         return newDate
     }
     
     func _addMilliseconds(ms: NSInteger) -> NSDate {
-        let newDate = self.dateByAddingTimeInterval(NSTimeInterval(ms))
+        let newDate = self.addingTimeInterval(TimeInterval(ms))
         return newDate
     }
 
@@ -86,31 +87,31 @@ public extension NSDate {
     ///Returns a date string using the given format
     ///Ex: "mmm-yyyy" returns May 2015
     func _dateString(format: String) -> String {
-        return dateStringWithFormat(format)
+        return dateStringWithFormat(format: format)
     }
 
     ///Returns the day as a string
     ///Ex: 5
     func _dayString(format: String) -> String {
-        return dateStringWithFormat(format)
+        return dateStringWithFormat(format: format)
     }
 
     ///Returns the weekday as a string
     ///Ex: Monday
     func _weekdayString() -> String {
-        return dateStringWithFormat("EEEE")
+        return dateStringWithFormat(format: "EEEE")
     }
 
     ///Returns the Month as a string
     ///Ex: May
     func _monthString(format: String) -> String {
-        return dateStringWithFormat(format)
+        return dateStringWithFormat(format: format)
     }
 
     ///Returns the year as a string
     ///Ex: 2015
     func _yearString(format: String) -> String {
-        return dateStringWithFormat(format)
+        return dateStringWithFormat(format: format)
     }
 
     ///Returns yes if date is a weekend
@@ -128,56 +129,50 @@ public extension NSDate {
     }
     
     func _dateGMTString() -> NSString {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = DateFormat.UTC
-        formatter.timeZone = NSTimeZone(name: "UTC")
+        formatter.timeZone = NSTimeZone(name: "UTC") as TimeZone!
         
-        return formatter.stringFromDate(self)
+        return formatter.string(from: self as Date) as NSString
     }
 
     ///Private date formatter
     private func dateStringWithFormat(format: String) -> String {
-        let formatter = NSDateFormatter()
+        let formatter = DateFormatter()
         formatter.dateFormat = format
 
-        return formatter.stringFromDate(self)
+        return formatter.string(from: self as Date)
     }
 
     //MARK: - Components
     ///Returns the day as an NSInteger
     func _day() -> NSInteger {
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Day, fromDate: self)
-        return components.day
+        return Calendar.current.component(.day, from: self as Date)
     }
 
     ///Returns the month as an NSInteger
     func _month() -> NSInteger {
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Month, fromDate: self)
-        return components.month
+        return Calendar.current.component(.month, from: self as Date)
     }
 
     ///Returns the year as an NSInteger
     func _year() -> NSInteger {
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: self)
-        return components.year
+        return Calendar.current.component(.year, from: self as Date)
     }
 
     ///Returns the weekday as an NSInteger
     func _weekday() -> NSInteger {
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Weekday, fromDate: self)
-        return components.weekday
+        return Calendar.current.component(.weekday, from: self as Date)
     }
 
     ///Returns the hour as an NSInteger
     func _hour() -> NSInteger {
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Hour, fromDate: self)
-        return components.hour
+        return Calendar.current.component(.hour, from: self as Date)
     }
 
     ///Returns the minute as an NSInteger
     func _minute() -> NSInteger {
-        let components = NSCalendar.currentCalendar().components(NSCalendarUnit.Minute, fromDate: self)
-        return components.minute
+        return Calendar.current.component(.minute, from: self as Date)
     }
 
     ///Returns number of minutes passed today
@@ -191,26 +186,27 @@ public extension NSDate {
     //MARK: - Timing
     ///Returns number of nights until a date
     func _numberOfNightsUntilDate(date:NSDate) -> NSInteger {
-        let days = _numberOfDaysUntilDateInclusive(date)
+        let days = _numberOfDaysUntilDateInclusive(endDate: date)
         return days - 1
     }
 
     ///Returns the number of days until a date, including the start and end date in the count
     func _numberOfDaysUntilDateInclusive(endDate:NSDate) -> NSInteger {
-        let calendar = NSCalendar.currentCalendar()
+        let calendar = NSCalendar.current
         let from = self
-        let components = calendar.components(.Day, fromDate: from, toDate: endDate, options: NSCalendarOptions())
+        let unitFlags = Set<Calendar.Component>([.day])
+        let components = calendar.dateComponents(unitFlags, from: from as Date, to: endDate as Date)
 
-        return components.day + 1
+        return components.day! + 1
     }
 
     ///Removes the time from the date. Makes the time 00:00:00
     func _stripTime() -> NSDate {
-        let dateUnits: NSCalendarUnit = [NSCalendarUnit.Year, NSCalendarUnit.Day, NSCalendarUnit.Month]
+        let dateUnits: NSCalendar.Unit = [NSCalendar.Unit.year, NSCalendar.Unit.day, NSCalendar.Unit.month]
 
-        let components = NSCalendar.currentCalendar().components(dateUnits, fromDate: self)
+        let components = NSCalendar.currentCalendar.components(dateUnits, fromDate: self)
 
-        let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)
 
         return calendar!.dateFromComponents(components)!
     }
@@ -218,8 +214,8 @@ public extension NSDate {
     ///Returns yes if date is between two dates, or is is the start or end date
     func _isBetweenStartDateInclusive(start:NSDate, endDate end:NSDate) -> Bool{
         let stripped = self._stripTime()
-        let afterStart = stripped._isLaterThanDate(start._stripTime())
-        let beforeEnd = stripped._isEarlierThanDate(end._stripTime())
+        let afterStart = stripped._isLaterThanDate(date: start._stripTime())
+        let beforeEnd = stripped._isEarlierThanDate(date: end._stripTime())
 
         let inBetween = (afterStart && beforeEnd)
         return inBetween
@@ -227,12 +223,12 @@ public extension NSDate {
 
     ///Returns yes if date is earlier than current date
     func _isEarlierThanDate(date: NSDate) -> Bool {
-        return self.earlierDate(date) == self
+        return self.earlierDate(date as Date) == self as Date
     }
 
     ///Returns yes if date is after current date
     func _isLaterThanDate(date: NSDate) -> Bool {
-        return self.laterDate(date) == self
+        return self.laterDate(date as Date) == self as Date
     }
 
     ///Returns yes if date is in the same month
@@ -253,25 +249,25 @@ public extension NSDate {
     ///Returns yes if two days are equal Irregardless of time.
     ///Equal if day, month and year are the same
     func _equalsDate(date:NSDate) -> Bool {
-        return self._isSameDay(date) && self._isSameMonth(date) && self._isSameYear(date)
+        return self._isSameDay(date: date) && self._isSameMonth(date: date) && self._isSameYear(date: date)
     }
 }
 
 //MARK: - Operators
 ///Adds a day to the date
 public postfix func ++ (date: NSDate) -> NSDate {
-    let newDate = date._addDays(1)
+    let newDate = date._addDays(numberOfDays: 1)
     return newDate
 }
 
 ///Removes a day from the date
 public postfix func -- (date: NSDate) -> NSDate {
-    let newDate = date._addDays(-1)
+    let newDate = date._addDays(numberOfDays: -1)
     return newDate
 }
 
 ///Adds a day to the date
 public func + (date: NSDate, numberOfDays: NSInteger) -> NSDate {
-    let newDate = date._addDays(numberOfDays)
+    let newDate = date._addDays(numberOfDays: numberOfDays)
     return newDate
 }

@@ -36,26 +36,26 @@ public extension UIViewController {
     /// Ex: MainViewController   ->  Main.storyboard
     class func _newInstance() -> UIViewController {
         let name = _storyboardName()
-        return _newInstanceFromStoryboardNamed(name)
+        return _newInstanceFromStoryboardNamed(sbName: name)
     }
     
     /// Returns a newly instantiated VC from the input storyboard
     class func _newInstanceFromStoryboardNamed(sbName : String) -> UIViewController {
-        let storyboard = UIStoryboard(name: sbName, bundle: NSBundle.mainBundle())
-        let viewController = storyboard.instantiateViewControllerWithIdentifier(_identifier()) 
+        let storyboard = UIStoryboard(name: sbName, bundle: Bundle.main)
+        let viewController = storyboard.instantiateViewController(withIdentifier: _identifier()) 
         return viewController
     }
-    
+  
     /// Class name is the identifier for the storyboard
     class func _identifier() -> String {
-        return NSStringFromClass(self.classForCoder()).componentsSeparatedByString(".").last!
+        return NSStringFromClass(type(of: self) as! AnyClass).components(separatedBy: ".")[0]
     }
     
     /// Storyboard name is the class of this VC without the words ViewController
     class func _storyboardName() -> String {
-        var sbName = NSStringFromClass(self.classForCoder()).componentsSeparatedByString(".").last!
+        var sbName = NSStringFromClass(type(of: self) as! AnyClass).components(separatedBy: ".")[0]
         
-        sbName = sbName._removeString("ViewController")!
+        sbName = sbName._removeString(str: "ViewController")!
         return sbName
     }
 }

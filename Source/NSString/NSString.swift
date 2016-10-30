@@ -32,7 +32,7 @@ public extension NSString {
     ///Returns yes if the NSString contains the REGEX pattern
     func _containsPattern(pattern:String)-> Bool {
         
-        let found = self.rangeOfString(pattern, options: NSStringCompareOptions.RegularExpressionSearch).location != NSNotFound
+        let found = self.rangeOfString(pattern, options: NSString.CompareOptions.RegularExpressionSearch).location != NSNotFound
         return found
     }
 }

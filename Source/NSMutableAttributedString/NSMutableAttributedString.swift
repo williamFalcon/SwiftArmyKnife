@@ -74,6 +74,6 @@ public extension NSMutableAttributedString {
 public func + (left:NSMutableAttributedString, right:NSMutableAttributedString) -> NSMutableAttributedString {
 
     let combined = left
-    combined.appendAttributedString(right)
+    combined.append(right)
     return combined
 }

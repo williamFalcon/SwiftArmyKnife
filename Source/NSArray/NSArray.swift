@@ -39,10 +39,10 @@ public extension NSArray {
     func _joinWithSeparator(separator:String) -> String {
 
         var joined = String()
-        for (idx,obj) in self.enumerate() {
+        for (idx,obj) in self.enumerated() {
             let string = obj as! String
 
-            if !(_isLastIndex(idx)) {
+            if !(_isLastIndex(index: idx)) {
                 joined = joined + string + separator
             }else {
                 joined = joined + string
@@ -63,7 +63,7 @@ public extension NSArray {
 
         var joined = String()
         for obj in self {
-            let value = obj.valueForKey(key) as! String
+            let value = (obj as AnyObject).value(key) as! String
             joined = joined + value + separator
         }
 

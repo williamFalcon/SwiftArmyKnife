@@ -14,10 +14,10 @@ public extension NSURL {
         
         let dict = NSMutableDictionary()
         
-        if let components = query?.componentsSeparatedByString("&") {
+        if let components = query?.components(separatedBy: "&") {
             for comp in components {
-                var sub = comp.componentsSeparatedByString("=")
-                dict.setObject(sub[1], forKey: sub[0])
+                var sub = comp.components(separatedBy: "=")
+                dict.setObject(sub[1], forKey: sub[0] as NSCopying)
             }
         }
         

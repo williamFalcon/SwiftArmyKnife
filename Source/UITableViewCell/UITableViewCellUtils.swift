@@ -35,7 +35,7 @@ public extension UITableViewCell {
     //MARK: - Computed Properties
     /// Returns the class name of this cell as the identifier.
     var _cellIdentifier : String {
-        let identifier =  NSStringFromClass(self.dynamicType).componentsSeparatedByString(".").last!
+        let identifier =  NSStringFromClass(type(of: self)).components(separatedBy: ".")[0]
         return identifier
     }
     
@@ -48,7 +48,7 @@ public extension UITableViewCell {
     /// Registers this cell to the passed in tableView
     class func _registerToTableView(tableView: UITableView) {
         let name = _identifier()
-        let nib = UINib(nibName: name, bundle: NSBundle.mainBundle())
-        tableView.registerNib(nib, forCellReuseIdentifier: name)
+        let nib = UINib(nibName: name, bundle: Bundle.main)
+        tableView.register(nib, forCellReuseIdentifier: name)
     }
 }

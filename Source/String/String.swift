@@ -56,7 +56,8 @@ public extension String {
         }
 
         //return the requested item
-        return self[self.startIndex.advancedBy(i)]
+        
+        return self[self.index(self.startIndex, offsetBy: i)]
     }
 
     /**
@@ -72,7 +73,7 @@ public extension String {
     Example: string = "habel" string["ab"] (returns 1)
     */
     subscript (string: String) -> Int {
-        return _indexOf(string)!
+        return _indexOf(string: string)!
     }
 
     /**
@@ -80,7 +81,7 @@ public extension String {
     Example: string[0...2] == "abc"
     */
     subscript (range: Range<Int>) -> String {
-        return substringWithRange(Range(start: startIndex.advancedBy(range.startIndex), end: startIndex.advancedBy(range.endIndex)))
+        return substring(with: Range(start: startIndex.advancedBy(range.startIndex), end: startIndex.advancedBy(range.endIndex)))
     }
 
     //MARK: - Searching
@@ -90,8 +91,8 @@ public extension String {
     func _matchesForRegex(regex: String) -> [String] {
 
         var results : [String] = []
-        let regex = try? NSRegularExpression(pattern: regex, options: NSRegularExpressionOptions.CaseInsensitive)
-        if let matches = regex?.matchesInString(self, options: [], range: NSMakeRange(0, self._length)) {
+        let regex = try? NSRegularExpression(pattern: regex, options: NSRegularExpression.Options.caseInsensitive)
+        if let matches = regex?.matches(in: self, options: [], range: NSMakeRange(0, self._length)) {
             for m in matches {
                 let match = self[m.range.location..<m.range.location+m.range.length]
                 results.append(match)
@@ -105,7 +106,7 @@ public extension String {
     */
     func _search(string:String?) -> Int? {
         var result : Int?
-        if let match = self._indexOf(string) {
+        if let match = self._indexOf(string: string) {
             result = match
         }
         return result
@@ -115,14 +116,14 @@ public extension String {
     Searches a string for a specified value, or regular expression, and returns the position of the match
     */
     func _containsRegex(string:String?) -> Bool {
-        return _matchesForRegex(string!).count > 0
+        return _matchesForRegex(regex: string!).count > 0
     }
 
     /**
     Returns true if string contains input string
     */
     func _contains(s: String) -> Bool{
-        return (self.rangeOfString(s) != nil) ? true : false
+        return (self.range(of: s) != nil) ? true : false
     }
 
     /**
@@ -143,7 +144,7 @@ public extension String {
     func _indexOf(string: String?) -> Int? {
         var result: Int?
         if let s = string {
-            let range = self.rangeOfString(s)!
+            let range = self._rangeOfString(sub: s)
             result = self.startIndex.distanceTo(range.startIndex)
         }
         return result
@@ -164,9 +165,9 @@ public extension String {
 
             //iterate from the end until we find a match in the string
             //when found, break
-            for (var i = startingIndex; i>=0; i--){
-                let subString = self._substringFromIndex(i)!
-                if subString._contains(s) {
+            for i in stride(from:self._length-1, to: 0, by: -1) {
+                let subString = self._substringFromIndex(index: i)!
+                if subString._contains(s: s) {
                     index = i
                     break
                 }
@@ -178,7 +179,7 @@ public extension String {
 
     func _rangeOfString(sub:String) -> NSRange? {
 
-        if let start = self._indexOf(sub) {
+        if let start = self._indexOf(string: sub) {
             return NSMakeRange(start, sub._length)
         }
         return nil
@@ -191,7 +192,8 @@ public extension String {
     func _substringFromIndex(index:Int) -> String? {
         var substring : String?
         if index <= self._length && index >= 0 {
-            substring = self.substringFromIndex(self.startIndex.advancedBy(index))
+            let index = self.index(self.startIndex, offsetBy: index)
+            substring = self.substring(from:  index)
         }
         return substring
     }
@@ -203,7 +205,8 @@ public extension String {
 
         var substring : String?
         if index <= self._length && index >= 0 {
-            substring = self.substringToIndex(self.startIndex.advancedBy(index))
+            let index = self.index(self.startIndex, offsetBy: index)
+            substring = self.substring(to:  index)
         }
         return substring
     }
@@ -211,7 +214,7 @@ public extension String {
     /// Extracts the characters from a string
     func _removeString(str:String) -> String? {
 
-        let substr = self._replaceAll(str, replacement: "")
+        let substr = self._replaceAll(regex: str, replacement: "")
         return substr
     }
 
@@ -254,7 +257,7 @@ public extension String {
         var result : String = self
         if let r = regex {
             if let rep = replacement {
-                result = self.stringByReplacingOccurrencesOfString(r, withString: rep, options: NSStringCompareOptions.RegularExpressionSearch, range: nil)
+                result = self.stringByReplacingOccurrencesOfString(r, withString: rep, options: NSString.CompareOptions.RegularExpressionSearch, range: nil)
             }
         }
 
@@ -291,16 +294,16 @@ public extension String {
     }
     
     func _toDateWithFormat(format: String) -> NSDate? {
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format
-        return dateFormatter.dateFromString(self)
+        return dateFormatter.date(from: self) as NSDate?
     }
     
     func _toDateUTCFormat() -> NSDate? {
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SS'Z'"
-        dateFormatter.timeZone = NSTimeZone(name: "GMT")
-        return dateFormatter.dateFromString(self)
+        dateFormatter.timeZone = NSTimeZone(name: "GMT") as TimeZone!
+        return dateFormatter.date(from: self) as NSDate?
     }
 
     //MARK: - Arranging
@@ -316,10 +319,11 @@ public extension String {
     */
     func _reverse() -> String {
         var reversed = ""
-        for var i = self._length-1; i>=0 ;i-- {
+        for i in stride(from:self._length-1, to: 0, by: -1) {
             let char : String = self[i]
             reversed += char
         }
+        
         return reversed
     }
 
@@ -357,13 +361,13 @@ public extension String {
     //MARK: - Sizing
     /// returns size of string with a font
     func _sizeWithFont(font:UIFont, maxWidth width:CGFloat) -> CGSize {
-
-        let label = UILabel(frame: CGRectMake(0, 0, width, 0))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: 0))
         label.numberOfLines = 0
         label.text = self
         label.font = font
-
-        let maxSize = CGSizeMake(width, CGFloat.max)
+        
+        
+        let maxSize = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         let requiredSize = label.sizeThatFits(maxSize)
 
         return requiredSize
@@ -375,7 +379,7 @@ public extension String {
 
     :param: allowEmptyEmail - If true will allow emails of length 0
     */
-    func _isValidEmail(allowEmptyEmail allowEmptyEmail:Bool) -> Bool {
+    func _isValidEmail(allowEmptyEmail:Bool) -> Bool {
 
         let e = self._trim()
 
@@ -385,7 +389,7 @@ public extension String {
         }
 
         let regex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
-        let matches = e._matchesForRegex(regex)
+        let matches = e._matchesForRegex(regex: regex)
         return matches.count > 0
     }
 
@@ -397,7 +401,7 @@ public extension String {
 }
 
 public func - (string:String, subString:String) -> String {
-    return string._removeString(subString)!
+    return string._removeString(str: subString)!
 }
 
 

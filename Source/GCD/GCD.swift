@@ -29,34 +29,41 @@ SOFTWARE.
 import UIKit
 import Foundation
 
-public class GCD: NSObject {
+public extension DispatchQueue {
+
+    private static var _onceTracker = [String]()
 
     ///Executes code with delay
-    public class func _delay(delay:Double, closure:()->()) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(delay * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), closure)
+    public class func _delay(delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            // your code here
+            closure()
+        }
     }
 
     ///Places on main q
-    public class func _dispatchMainQueue(closure:()->()) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+    public class func _dispatchMainQueue(closure:@escaping ()->()) {
+        DispatchQueue.main.async {
             closure()
-        })
+        }
     }
 
-    public class func _dispatchToBackgroundQueueWithPriority(priority:Int, closure:()->()) {
-        dispatch_async(dispatch_get_global_queue(priority, 0), closure)
+    public class func _dispatchToBackgroundQueueWithPriority(priority:Int, closure:@escaping ()->()) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.default).async {
+            closure()
+        }
     }
 
     ///Dispatches code once
-    public class func _dispatchOnce(closure:()->()) {
-        var token: dispatch_once_t = 0
-        dispatch_once(&token) {
-            closure()
+    ///Credit: http://stackoverflow.com/questions/37886994/dispatch-once-in-swift-3
+    public class func _once(token: String, block:(Void)->Void) {
+        objc_sync_enter(self); defer { objc_sync_exit(self) }
+        
+        if _onceTracker.contains(token) {
+            return
         }
+        
+        _onceTracker.append(token)
+        block()
     }
 }

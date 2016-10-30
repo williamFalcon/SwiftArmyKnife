@@ -38,21 +38,21 @@ public extension UIImageView {
         self.image = image
         
         if let im = image {
-            self.frame = CGRect(origin: CGPointZero, size: im.size)
+            self.frame = CGRect(origin: CGPoint.zero, size: im.size)
         }
     }
 
     /// Tints imageView
     func _tintWithColor(color:UIColor) {
-        dispatch_async(dispatch_get_main_queue(), { () -> Void in
-            let coloredImage = self.image?.imageWithRenderingMode(UIImageRenderingMode.AlwaysTemplate)
+        DispatchQueue.main.async {
+            let coloredImage = self.image?.withRenderingMode(UIImageRenderingMode.alwaysTemplate)
             self.image = coloredImage
             self.tintColor = color
-        })
+        }
     }
     
     ///Flips an image horizontally
     func _mirrorHorizontally() {
-        self.transform = CGAffineTransformScale(transform, -1, 1)
+        self.transform = transform.scaledBy(x: -1, y: 1)
     }
 }

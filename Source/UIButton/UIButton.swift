@@ -35,9 +35,9 @@ public extension UIButton {
     func _setImageTintColor(color:UIColor, forState state:UIControlState) {
 
         if let _ = self.imageView?.image {
-            var tintedImage = self.imageForState(state)!
-            tintedImage = self.tindedImage(tintedImage, withColor: color)
-            self.setImage(tintedImage, forState: state)
+            var tintedImage = self.image(for: state)!
+            tintedImage = self.tindedImage(image: tintedImage, withColor: color)
+            self.setImage(tintedImage, for: state)
         }else {
             print("Button does not have image to tint")
         }
@@ -47,15 +47,15 @@ public extension UIButton {
     func _tintButtonImages(buttons:NSArray, withColor color:UIColor, forState state:UIControlState) {
         for obj in buttons {
             let button = obj as! UIButton
-            button._setImageTintColor(color, forState: state)
+            button._setImageTintColor(color: color, forState: state)
         }
     }
 
     ///Sets background tint color for button
     func _setBackgroundTintColor(color:UIColor, forState state:UIControlState) {
-        if let ownBackgroundImage = self.backgroundImageForState(state) {
-            let tintedImage = self.tindedImage(ownBackgroundImage, withColor: color)
-            self.setBackgroundImage(tintedImage, forState: state)
+        if let ownBackgroundImage = self.backgroundImage(for: state) {
+            let tintedImage = self.tindedImage(image: ownBackgroundImage, withColor: color)
+            self.setBackgroundImage(tintedImage, for: state)
         }else {
             print("Button does not have an image to tint %@", self)
         }
@@ -65,7 +65,7 @@ public extension UIButton {
     func _tintButtonBackgrounds(buttons:NSArray, withColor color:UIColor, forState state:UIControlState) {
         for obj in buttons {
             let button = obj as! UIButton
-            button._setBackgroundTintColor(color, forState: state)
+            button._setBackgroundTintColor(color: color, forState: state)
         }
     }
 
@@ -73,26 +73,26 @@ public extension UIButton {
     // http://stackoverflow.com/a/19413033
     // Originally found at https://github.com/filipstefansson/UITintedButton/blob/master/UIButton%2BtintImage.m
     private func tindedImage(image:UIImage, withColor color:UIColor) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(image.size, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(image.size, false, UIScreen.main.scale)
 
         let context = UIGraphicsGetCurrentContext()
-        CGContextTranslateCTM(context, 0, image.size.height)
-        CGContextScaleCTM(context, 1.0, -1.0)
-
-        let rect = CGRectMake(0, 0, image.size.width, image.size.height)
+        context!.translateBy(x: 0, y: image.size.height)
+        context!.scaleBy(x: 1.0, y: -1.0)
+        
+        let rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
 
         //draw alpha mask
-        CGContextSetBlendMode(context, CGBlendMode.Normal)
-        CGContextDrawImage(context, rect, image.CGImage)
+        context!.setBlendMode(CGBlendMode.normal)
+        context!.draw(image.cgImage!, in: rect)
 
         // draw tint color, preserving alpha values of original image
-        CGContextSetBlendMode(context, CGBlendMode.SourceIn)
+        context!.setBlendMode(CGBlendMode.sourceIn)
         tintColor?.setFill()
-        CGContextFillRect(context, rect)
+        context!.fill(rect)
 
         let coloredImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        return coloredImage
+        return coloredImage!
     }
 }
 

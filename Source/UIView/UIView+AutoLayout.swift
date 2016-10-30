@@ -36,7 +36,7 @@ public extension UIView {
     */
     func tb_widthConstraint() -> NSLayoutConstraint? {
         for item in constraints {
-            if item.firstAttribute == NSLayoutAttribute.Width {
+            if item.firstAttribute == NSLayoutAttribute.width {
                 return item
             }
         }
@@ -50,7 +50,7 @@ public extension UIView {
     */
     func tb_heightConstraint() -> NSLayoutConstraint? {
         for item in constraints {
-            if item.firstAttribute == NSLayoutAttribute.Height {
+            if item.firstAttribute == NSLayoutAttribute.height {
                 return item
             }
         }
