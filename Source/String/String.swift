@@ -105,6 +105,14 @@ public extension String {
         return results
     }
 
+    subscript (range: Range<Int>) -> String {
+        
+        let startIndex = self.index(self.startIndex, offsetBy: range.lowerBound)
+        let endIndex = self.index(self.startIndex, offsetBy: range.count)
+        
+        return self[startIndex..<endIndex]
+    }
+    
     /**
     Searches a string for a specified value, or regular expression, and returns the position of the match
     */
@@ -148,8 +156,9 @@ public extension String {
     func _indexOf(string: String?) -> Int? {
         var result: Int?
         if let s = string {
-            let range = self._rangeOfString(sub: s)
-            result = self.startIndex.distanceTo(range.startIndex)
+            if let range = self._rangeOfString(sub: s) {
+                result = range.lowerBound
+            }
         }
         return result
     }
@@ -181,10 +190,10 @@ public extension String {
     }
 
 
-    func _rangeOfString(sub:String) -> NSRange? {
+    func _rangeOfString(sub:String) -> ClosedRange<Int>? {
 
         if let start = self._indexOf(string: sub) {
-            return NSMakeRange(start, sub._length)
+            return ClosedRange(start..<sub._length)
         }
         return nil
     }
