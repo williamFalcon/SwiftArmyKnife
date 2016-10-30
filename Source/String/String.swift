@@ -75,6 +75,30 @@ public extension String {
     subscript (string: String) -> Int {
         return _indexOf(string: string)!
     }
+    
+    /**
+     Handle python-like negatives
+    */
+    subscript(index1: Int,  index2: Int) -> String {
+        
+        let strSize = self._length
+        var indexFirst:Int = index1
+        var indexLast:Int = index2
+        
+        // Handle Python-like negative indices
+        
+        if indexFirst < 0 {
+            indexFirst = strSize + index1
+        }
+        
+        if index2 <= 0 {
+            indexLast = strSize + index2
+        }
+        
+        let ra = self[indexFirst..<indexLast]
+        return ra
+    }
+
 
     /**
     Returns string in a range
