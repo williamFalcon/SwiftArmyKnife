@@ -13,68 +13,6 @@
 		021AC9611DC6537E00A8110B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 021AC9601DC6537E00A8110B /* Assets.xcassets */; };
 		021AC9641DC6537E00A8110B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 021AC9621DC6537E00A8110B /* LaunchScreen.storyboard */; };
 		021AC96F1DC6537E00A8110B /* SwiftArmyKnifeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC96E1DC6537E00A8110B /* SwiftArmyKnifeTests.swift */; };
-		021AC9B41DC6538D00A8110B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC97B1DC6538D00A8110B /* Array.swift */; };
-		021AC9B51DC6538D00A8110B /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC97B1DC6538D00A8110B /* Array.swift */; };
-		021AC9B61DC6538D00A8110B /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC97D1DC6538D00A8110B /* GCD.swift */; };
-		021AC9B71DC6538D00A8110B /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC97D1DC6538D00A8110B /* GCD.swift */; };
-		021AC9B81DC6538D00A8110B /* Integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC97F1DC6538D00A8110B /* Integer.swift */; };
-		021AC9B91DC6538D00A8110B /* Integer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC97F1DC6538D00A8110B /* Integer.swift */; };
-		021AC9BA1DC6538D00A8110B /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9811DC6538D00A8110B /* MKMapView.swift */; };
-		021AC9BB1DC6538D00A8110B /* MKMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9811DC6538D00A8110B /* MKMapView.swift */; };
-		021AC9BC1DC6538D00A8110B /* NSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9831DC6538D00A8110B /* NSArray.swift */; };
-		021AC9BD1DC6538D00A8110B /* NSArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9831DC6538D00A8110B /* NSArray.swift */; };
-		021AC9BE1DC6538D00A8110B /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9851DC6538D00A8110B /* NSAttributedString.swift */; };
-		021AC9BF1DC6538D00A8110B /* NSAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9851DC6538D00A8110B /* NSAttributedString.swift */; };
-		021AC9C01DC6538D00A8110B /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9871DC6538D00A8110B /* NSDate.swift */; };
-		021AC9C11DC6538D00A8110B /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9871DC6538D00A8110B /* NSDate.swift */; };
-		021AC9C21DC6538D00A8110B /* NSDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9891DC6538D00A8110B /* NSDictionary.swift */; };
-		021AC9C31DC6538D00A8110B /* NSDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9891DC6538D00A8110B /* NSDictionary.swift */; };
-		021AC9C41DC6538D00A8110B /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC98B1DC6538D00A8110B /* NSMutableAttributedString.swift */; };
-		021AC9C51DC6538D00A8110B /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC98B1DC6538D00A8110B /* NSMutableAttributedString.swift */; };
-		021AC9C61DC6538D00A8110B /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC98D1DC6538D00A8110B /* NSNumber.swift */; };
-		021AC9C71DC6538D00A8110B /* NSNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC98D1DC6538D00A8110B /* NSNumber.swift */; };
-		021AC9C81DC6538D00A8110B /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC98F1DC6538D00A8110B /* NSString.swift */; };
-		021AC9C91DC6538D00A8110B /* NSString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC98F1DC6538D00A8110B /* NSString.swift */; };
-		021AC9CA1DC6538D00A8110B /* NSUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9911DC6538D00A8110B /* NSUrl.swift */; };
-		021AC9CB1DC6538D00A8110B /* NSUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9911DC6538D00A8110B /* NSUrl.swift */; };
-		021AC9CC1DC6538D00A8110B /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9931DC6538D00A8110B /* Set.swift */; };
-		021AC9CD1DC6538D00A8110B /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9931DC6538D00A8110B /* Set.swift */; };
-		021AC9CE1DC6538D00A8110B /* String-Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9951DC6538D00A8110B /* String-Crypto.swift */; };
-		021AC9CF1DC6538D00A8110B /* String-Crypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9951DC6538D00A8110B /* String-Crypto.swift */; };
-		021AC9D01DC6538D00A8110B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9961DC6538D00A8110B /* String.swift */; };
-		021AC9D11DC6538D00A8110B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9961DC6538D00A8110B /* String.swift */; };
-		021AC9D21DC6538D00A8110B /* UIApplication+bolts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9981DC6538D00A8110B /* UIApplication+bolts.swift */; };
-		021AC9D31DC6538D00A8110B /* UIApplication+bolts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9981DC6538D00A8110B /* UIApplication+bolts.swift */; };
-		021AC9D41DC6538D00A8110B /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC99A1DC6538D00A8110B /* UIButton.swift */; };
-		021AC9D51DC6538D00A8110B /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC99A1DC6538D00A8110B /* UIButton.swift */; };
-		021AC9D61DC6538D00A8110B /* UICollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC99C1DC6538D00A8110B /* UICollectionReusableHeaderView.swift */; };
-		021AC9D71DC6538D00A8110B /* UICollectionReusableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC99C1DC6538D00A8110B /* UICollectionReusableHeaderView.swift */; };
-		021AC9D81DC6538D00A8110B /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC99E1DC6538D00A8110B /* UICollectionView.swift */; };
-		021AC9D91DC6538D00A8110B /* UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC99E1DC6538D00A8110B /* UICollectionView.swift */; };
-		021AC9DA1DC6538D00A8110B /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A01DC6538D00A8110B /* UICollectionViewCell.swift */; };
-		021AC9DB1DC6538D00A8110B /* UICollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A01DC6538D00A8110B /* UICollectionViewCell.swift */; };
-		021AC9DC1DC6538D00A8110B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A21DC6538D00A8110B /* UIColor.swift */; };
-		021AC9DD1DC6538D00A8110B /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A21DC6538D00A8110B /* UIColor.swift */; };
-		021AC9DE1DC6538D00A8110B /* UIImageViewBolts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A41DC6538D00A8110B /* UIImageViewBolts.swift */; };
-		021AC9DF1DC6538D00A8110B /* UIImageViewBolts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A41DC6538D00A8110B /* UIImageViewBolts.swift */; };
-		021AC9E01DC6538D00A8110B /* UIPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A61DC6538D00A8110B /* UIPanGestureRecognizer.swift */; };
-		021AC9E11DC6538D00A8110B /* UIPanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A61DC6538D00A8110B /* UIPanGestureRecognizer.swift */; };
-		021AC9E21DC6538D00A8110B /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A81DC6538D00A8110B /* UIScrollView.swift */; };
-		021AC9E31DC6538D00A8110B /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9A81DC6538D00A8110B /* UIScrollView.swift */; };
-		021AC9E41DC6538D00A8110B /* UITableViewCellUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9AA1DC6538D00A8110B /* UITableViewCellUtils.swift */; };
-		021AC9E51DC6538D00A8110B /* UITableViewCellUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9AA1DC6538D00A8110B /* UITableViewCellUtils.swift */; };
-		021AC9E61DC6538D00A8110B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9AC1DC6538D00A8110B /* UIView+AutoLayout.swift */; };
-		021AC9E71DC6538D00A8110B /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9AC1DC6538D00A8110B /* UIView+AutoLayout.swift */; };
-		021AC9E81DC6538D00A8110B /* UIView+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9AD1DC6538D00A8110B /* UIView+Factory.swift */; };
-		021AC9E91DC6538D00A8110B /* UIView+Factory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9AD1DC6538D00A8110B /* UIView+Factory.swift */; };
-		021AC9EA1DC6538D00A8110B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9AE1DC6538D00A8110B /* UIView.swift */; };
-		021AC9EB1DC6538D00A8110B /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9AE1DC6538D00A8110B /* UIView.swift */; };
-		021AC9EC1DC6538D00A8110B /* UIViewController+Containment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9B01DC6538D00A8110B /* UIViewController+Containment.swift */; };
-		021AC9ED1DC6538D00A8110B /* UIViewController+Containment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9B01DC6538D00A8110B /* UIViewController+Containment.swift */; };
-		021AC9EE1DC6538D00A8110B /* ViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9B11DC6538D00A8110B /* ViewControllerUtils.swift */; };
-		021AC9EF1DC6538D00A8110B /* ViewControllerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9B11DC6538D00A8110B /* ViewControllerUtils.swift */; };
-		021AC9F01DC6538D00A8110B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9B31DC6538D00A8110B /* UIWindow.swift */; };
-		021AC9F11DC6538D00A8110B /* UIWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 021AC9B31DC6538D00A8110B /* UIWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,37 +36,6 @@
 		021AC96A1DC6537E00A8110B /* SwiftArmyKnifeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftArmyKnifeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		021AC96E1DC6537E00A8110B /* SwiftArmyKnifeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftArmyKnifeTests.swift; sourceTree = "<group>"; };
 		021AC9701DC6537E00A8110B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		021AC97B1DC6538D00A8110B /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		021AC97D1DC6538D00A8110B /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
-		021AC97F1DC6538D00A8110B /* Integer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Integer.swift; sourceTree = "<group>"; };
-		021AC9811DC6538D00A8110B /* MKMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKMapView.swift; sourceTree = "<group>"; };
-		021AC9831DC6538D00A8110B /* NSArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSArray.swift; sourceTree = "<group>"; };
-		021AC9851DC6538D00A8110B /* NSAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSAttributedString.swift; sourceTree = "<group>"; };
-		021AC9871DC6538D00A8110B /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
-		021AC9891DC6538D00A8110B /* NSDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionary.swift; sourceTree = "<group>"; };
-		021AC98B1DC6538D00A8110B /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
-		021AC98D1DC6538D00A8110B /* NSNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumber.swift; sourceTree = "<group>"; };
-		021AC98F1DC6538D00A8110B /* NSString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSString.swift; sourceTree = "<group>"; };
-		021AC9911DC6538D00A8110B /* NSUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSUrl.swift; sourceTree = "<group>"; };
-		021AC9931DC6538D00A8110B /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
-		021AC9951DC6538D00A8110B /* String-Crypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String-Crypto.swift"; sourceTree = "<group>"; };
-		021AC9961DC6538D00A8110B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		021AC9981DC6538D00A8110B /* UIApplication+bolts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIApplication+bolts.swift"; sourceTree = "<group>"; };
-		021AC99A1DC6538D00A8110B /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
-		021AC99C1DC6538D00A8110B /* UICollectionReusableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionReusableHeaderView.swift; sourceTree = "<group>"; };
-		021AC99E1DC6538D00A8110B /* UICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionView.swift; sourceTree = "<group>"; };
-		021AC9A01DC6538D00A8110B /* UICollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewCell.swift; sourceTree = "<group>"; };
-		021AC9A21DC6538D00A8110B /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
-		021AC9A41DC6538D00A8110B /* UIImageViewBolts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewBolts.swift; sourceTree = "<group>"; };
-		021AC9A61DC6538D00A8110B /* UIPanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPanGestureRecognizer.swift; sourceTree = "<group>"; };
-		021AC9A81DC6538D00A8110B /* UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
-		021AC9AA1DC6538D00A8110B /* UITableViewCellUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewCellUtils.swift; sourceTree = "<group>"; };
-		021AC9AC1DC6538D00A8110B /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
-		021AC9AD1DC6538D00A8110B /* UIView+Factory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Factory.swift"; sourceTree = "<group>"; };
-		021AC9AE1DC6538D00A8110B /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
-		021AC9B01DC6538D00A8110B /* UIViewController+Containment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Containment.swift"; sourceTree = "<group>"; };
-		021AC9B11DC6538D00A8110B /* ViewControllerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerUtils.swift; sourceTree = "<group>"; };
-		021AC9B31DC6538D00A8110B /* UIWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,7 +77,6 @@
 		021AC9581DC6537E00A8110B /* SwiftArmyKnife */ = {
 			isa = PBXGroup;
 			children = (
-				021AC9791DC6538D00A8110B /* Source */,
 				021AC9591DC6537E00A8110B /* AppDelegate.swift */,
 				021AC95B1DC6537E00A8110B /* ViewController.swift */,
 				021AC95D1DC6537E00A8110B /* Main.storyboard */,
@@ -188,261 +94,6 @@
 				021AC9701DC6537E00A8110B /* Info.plist */,
 			);
 			path = SwiftArmyKnifeTests;
-			sourceTree = "<group>";
-		};
-		021AC9791DC6538D00A8110B /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				021AC97A1DC6538D00A8110B /* Array */,
-				021AC97C1DC6538D00A8110B /* GCD */,
-				021AC97E1DC6538D00A8110B /* Integer */,
-				021AC9801DC6538D00A8110B /* MKMapView */,
-				021AC9821DC6538D00A8110B /* NSArray */,
-				021AC9841DC6538D00A8110B /* NSAttributedString */,
-				021AC9861DC6538D00A8110B /* NSDate */,
-				021AC9881DC6538D00A8110B /* NSDictionary */,
-				021AC98A1DC6538D00A8110B /* NSMutableAttributedString */,
-				021AC98C1DC6538D00A8110B /* NSNumber */,
-				021AC98E1DC6538D00A8110B /* NSString */,
-				021AC9901DC6538D00A8110B /* NSUrl */,
-				021AC9921DC6538D00A8110B /* Set */,
-				021AC9941DC6538D00A8110B /* String */,
-				021AC9971DC6538D00A8110B /* UIApplication */,
-				021AC9991DC6538D00A8110B /* UIButton */,
-				021AC99B1DC6538D00A8110B /* UICollectionReusableHeaderView */,
-				021AC99D1DC6538D00A8110B /* UICollectionView */,
-				021AC99F1DC6538D00A8110B /* UICollectionViewCell */,
-				021AC9A11DC6538D00A8110B /* UIColor */,
-				021AC9A31DC6538D00A8110B /* UIImageView */,
-				021AC9A51DC6538D00A8110B /* UIPanGestureRecognizer */,
-				021AC9A71DC6538D00A8110B /* UIScrollView */,
-				021AC9A91DC6538D00A8110B /* UITableViewCell */,
-				021AC9AB1DC6538D00A8110B /* UIView */,
-				021AC9AF1DC6538D00A8110B /* UIViewController */,
-				021AC9B21DC6538D00A8110B /* UIWindow */,
-			);
-			name = Source;
-			path = ../../../Source;
-			sourceTree = "<group>";
-		};
-		021AC97A1DC6538D00A8110B /* Array */ = {
-			isa = PBXGroup;
-			children = (
-				021AC97B1DC6538D00A8110B /* Array.swift */,
-			);
-			path = Array;
-			sourceTree = "<group>";
-		};
-		021AC97C1DC6538D00A8110B /* GCD */ = {
-			isa = PBXGroup;
-			children = (
-				021AC97D1DC6538D00A8110B /* GCD.swift */,
-			);
-			path = GCD;
-			sourceTree = "<group>";
-		};
-		021AC97E1DC6538D00A8110B /* Integer */ = {
-			isa = PBXGroup;
-			children = (
-				021AC97F1DC6538D00A8110B /* Integer.swift */,
-			);
-			path = Integer;
-			sourceTree = "<group>";
-		};
-		021AC9801DC6538D00A8110B /* MKMapView */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9811DC6538D00A8110B /* MKMapView.swift */,
-			);
-			path = MKMapView;
-			sourceTree = "<group>";
-		};
-		021AC9821DC6538D00A8110B /* NSArray */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9831DC6538D00A8110B /* NSArray.swift */,
-			);
-			path = NSArray;
-			sourceTree = "<group>";
-		};
-		021AC9841DC6538D00A8110B /* NSAttributedString */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9851DC6538D00A8110B /* NSAttributedString.swift */,
-			);
-			path = NSAttributedString;
-			sourceTree = "<group>";
-		};
-		021AC9861DC6538D00A8110B /* NSDate */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9871DC6538D00A8110B /* NSDate.swift */,
-			);
-			path = NSDate;
-			sourceTree = "<group>";
-		};
-		021AC9881DC6538D00A8110B /* NSDictionary */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9891DC6538D00A8110B /* NSDictionary.swift */,
-			);
-			path = NSDictionary;
-			sourceTree = "<group>";
-		};
-		021AC98A1DC6538D00A8110B /* NSMutableAttributedString */ = {
-			isa = PBXGroup;
-			children = (
-				021AC98B1DC6538D00A8110B /* NSMutableAttributedString.swift */,
-			);
-			path = NSMutableAttributedString;
-			sourceTree = "<group>";
-		};
-		021AC98C1DC6538D00A8110B /* NSNumber */ = {
-			isa = PBXGroup;
-			children = (
-				021AC98D1DC6538D00A8110B /* NSNumber.swift */,
-			);
-			path = NSNumber;
-			sourceTree = "<group>";
-		};
-		021AC98E1DC6538D00A8110B /* NSString */ = {
-			isa = PBXGroup;
-			children = (
-				021AC98F1DC6538D00A8110B /* NSString.swift */,
-			);
-			path = NSString;
-			sourceTree = "<group>";
-		};
-		021AC9901DC6538D00A8110B /* NSUrl */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9911DC6538D00A8110B /* NSUrl.swift */,
-			);
-			path = NSUrl;
-			sourceTree = "<group>";
-		};
-		021AC9921DC6538D00A8110B /* Set */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9931DC6538D00A8110B /* Set.swift */,
-			);
-			path = Set;
-			sourceTree = "<group>";
-		};
-		021AC9941DC6538D00A8110B /* String */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9951DC6538D00A8110B /* String-Crypto.swift */,
-				021AC9961DC6538D00A8110B /* String.swift */,
-			);
-			path = String;
-			sourceTree = "<group>";
-		};
-		021AC9971DC6538D00A8110B /* UIApplication */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9981DC6538D00A8110B /* UIApplication+bolts.swift */,
-			);
-			path = UIApplication;
-			sourceTree = "<group>";
-		};
-		021AC9991DC6538D00A8110B /* UIButton */ = {
-			isa = PBXGroup;
-			children = (
-				021AC99A1DC6538D00A8110B /* UIButton.swift */,
-			);
-			path = UIButton;
-			sourceTree = "<group>";
-		};
-		021AC99B1DC6538D00A8110B /* UICollectionReusableHeaderView */ = {
-			isa = PBXGroup;
-			children = (
-				021AC99C1DC6538D00A8110B /* UICollectionReusableHeaderView.swift */,
-			);
-			path = UICollectionReusableHeaderView;
-			sourceTree = "<group>";
-		};
-		021AC99D1DC6538D00A8110B /* UICollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				021AC99E1DC6538D00A8110B /* UICollectionView.swift */,
-			);
-			path = UICollectionView;
-			sourceTree = "<group>";
-		};
-		021AC99F1DC6538D00A8110B /* UICollectionViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9A01DC6538D00A8110B /* UICollectionViewCell.swift */,
-			);
-			path = UICollectionViewCell;
-			sourceTree = "<group>";
-		};
-		021AC9A11DC6538D00A8110B /* UIColor */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9A21DC6538D00A8110B /* UIColor.swift */,
-			);
-			path = UIColor;
-			sourceTree = "<group>";
-		};
-		021AC9A31DC6538D00A8110B /* UIImageView */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9A41DC6538D00A8110B /* UIImageViewBolts.swift */,
-			);
-			path = UIImageView;
-			sourceTree = "<group>";
-		};
-		021AC9A51DC6538D00A8110B /* UIPanGestureRecognizer */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9A61DC6538D00A8110B /* UIPanGestureRecognizer.swift */,
-			);
-			path = UIPanGestureRecognizer;
-			sourceTree = "<group>";
-		};
-		021AC9A71DC6538D00A8110B /* UIScrollView */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9A81DC6538D00A8110B /* UIScrollView.swift */,
-			);
-			path = UIScrollView;
-			sourceTree = "<group>";
-		};
-		021AC9A91DC6538D00A8110B /* UITableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9AA1DC6538D00A8110B /* UITableViewCellUtils.swift */,
-			);
-			path = UITableViewCell;
-			sourceTree = "<group>";
-		};
-		021AC9AB1DC6538D00A8110B /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9AC1DC6538D00A8110B /* UIView+AutoLayout.swift */,
-				021AC9AD1DC6538D00A8110B /* UIView+Factory.swift */,
-				021AC9AE1DC6538D00A8110B /* UIView.swift */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		021AC9AF1DC6538D00A8110B /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9B01DC6538D00A8110B /* UIViewController+Containment.swift */,
-				021AC9B11DC6538D00A8110B /* ViewControllerUtils.swift */,
-			);
-			path = UIViewController;
-			sourceTree = "<group>";
-		};
-		021AC9B21DC6538D00A8110B /* UIWindow */ = {
-			isa = PBXGroup;
-			children = (
-				021AC9B31DC6538D00A8110B /* UIWindow.swift */,
-			);
-			path = UIWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -550,39 +201,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021AC9C41DC6538D00A8110B /* NSMutableAttributedString.swift in Sources */,
-				021AC9B41DC6538D00A8110B /* Array.swift in Sources */,
-				021AC9B81DC6538D00A8110B /* Integer.swift in Sources */,
-				021AC9CE1DC6538D00A8110B /* String-Crypto.swift in Sources */,
-				021AC9EE1DC6538D00A8110B /* ViewControllerUtils.swift in Sources */,
 				021AC95C1DC6537E00A8110B /* ViewController.swift in Sources */,
-				021AC9D21DC6538D00A8110B /* UIApplication+bolts.swift in Sources */,
-				021AC9DA1DC6538D00A8110B /* UICollectionViewCell.swift in Sources */,
-				021AC9D41DC6538D00A8110B /* UIButton.swift in Sources */,
-				021AC9BE1DC6538D00A8110B /* NSAttributedString.swift in Sources */,
-				021AC9D61DC6538D00A8110B /* UICollectionReusableHeaderView.swift in Sources */,
-				021AC9EA1DC6538D00A8110B /* UIView.swift in Sources */,
-				021AC9DC1DC6538D00A8110B /* UIColor.swift in Sources */,
-				021AC9D81DC6538D00A8110B /* UICollectionView.swift in Sources */,
-				021AC9CC1DC6538D00A8110B /* Set.swift in Sources */,
-				021AC9F01DC6538D00A8110B /* UIWindow.swift in Sources */,
-				021AC9C01DC6538D00A8110B /* NSDate.swift in Sources */,
-				021AC9C81DC6538D00A8110B /* NSString.swift in Sources */,
-				021AC9BA1DC6538D00A8110B /* MKMapView.swift in Sources */,
-				021AC9CA1DC6538D00A8110B /* NSUrl.swift in Sources */,
-				021AC9EC1DC6538D00A8110B /* UIViewController+Containment.swift in Sources */,
-				021AC9E61DC6538D00A8110B /* UIView+AutoLayout.swift in Sources */,
-				021AC9E81DC6538D00A8110B /* UIView+Factory.swift in Sources */,
-				021AC9E01DC6538D00A8110B /* UIPanGestureRecognizer.swift in Sources */,
-				021AC9DE1DC6538D00A8110B /* UIImageViewBolts.swift in Sources */,
-				021AC9C61DC6538D00A8110B /* NSNumber.swift in Sources */,
-				021AC9B61DC6538D00A8110B /* GCD.swift in Sources */,
-				021AC9E41DC6538D00A8110B /* UITableViewCellUtils.swift in Sources */,
-				021AC9BC1DC6538D00A8110B /* NSArray.swift in Sources */,
-				021AC9D01DC6538D00A8110B /* String.swift in Sources */,
-				021AC9C21DC6538D00A8110B /* NSDictionary.swift in Sources */,
 				021AC95A1DC6537E00A8110B /* AppDelegate.swift in Sources */,
-				021AC9E21DC6538D00A8110B /* UIScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,38 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				021AC9BF1DC6538D00A8110B /* NSAttributedString.swift in Sources */,
-				021AC9C91DC6538D00A8110B /* NSString.swift in Sources */,
-				021AC9BD1DC6538D00A8110B /* NSArray.swift in Sources */,
-				021AC9D71DC6538D00A8110B /* UICollectionReusableHeaderView.swift in Sources */,
-				021AC9EB1DC6538D00A8110B /* UIView.swift in Sources */,
-				021AC9B71DC6538D00A8110B /* GCD.swift in Sources */,
-				021AC9EF1DC6538D00A8110B /* ViewControllerUtils.swift in Sources */,
 				021AC96F1DC6537E00A8110B /* SwiftArmyKnifeTests.swift in Sources */,
-				021AC9B91DC6538D00A8110B /* Integer.swift in Sources */,
-				021AC9DD1DC6538D00A8110B /* UIColor.swift in Sources */,
-				021AC9ED1DC6538D00A8110B /* UIViewController+Containment.swift in Sources */,
-				021AC9CF1DC6538D00A8110B /* String-Crypto.swift in Sources */,
-				021AC9E51DC6538D00A8110B /* UITableViewCellUtils.swift in Sources */,
-				021AC9DB1DC6538D00A8110B /* UICollectionViewCell.swift in Sources */,
-				021AC9E31DC6538D00A8110B /* UIScrollView.swift in Sources */,
-				021AC9D31DC6538D00A8110B /* UIApplication+bolts.swift in Sources */,
-				021AC9C31DC6538D00A8110B /* NSDictionary.swift in Sources */,
-				021AC9D91DC6538D00A8110B /* UICollectionView.swift in Sources */,
-				021AC9E91DC6538D00A8110B /* UIView+Factory.swift in Sources */,
-				021AC9B51DC6538D00A8110B /* Array.swift in Sources */,
-				021AC9C71DC6538D00A8110B /* NSNumber.swift in Sources */,
-				021AC9C11DC6538D00A8110B /* NSDate.swift in Sources */,
-				021AC9CD1DC6538D00A8110B /* Set.swift in Sources */,
-				021AC9E71DC6538D00A8110B /* UIView+AutoLayout.swift in Sources */,
-				021AC9DF1DC6538D00A8110B /* UIImageViewBolts.swift in Sources */,
-				021AC9C51DC6538D00A8110B /* NSMutableAttributedString.swift in Sources */,
-				021AC9E11DC6538D00A8110B /* UIPanGestureRecognizer.swift in Sources */,
-				021AC9BB1DC6538D00A8110B /* MKMapView.swift in Sources */,
-				021AC9D11DC6538D00A8110B /* String.swift in Sources */,
-				021AC9CB1DC6538D00A8110B /* NSUrl.swift in Sources */,
-				021AC9D51DC6538D00A8110B /* UIButton.swift in Sources */,
-				021AC9F11DC6538D00A8110B /* UIWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -821,6 +410,7 @@
 				021AC9751DC6537E00A8110B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		021AC9761DC6537E00A8110B /* Build configuration list for PBXNativeTarget "SwiftArmyKnifeTests" */ = {
 			isa = XCConfigurationList;
@@ -829,6 +419,7 @@
 				021AC9781DC6537E00A8110B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
